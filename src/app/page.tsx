@@ -1,10 +1,11 @@
-import Image from "next/image";
-import { AsideMain } from "./components/AsideMain";
+import { AsideContent } from "./components/AsideContent";
+import { MainContent } from "./components/MainContent";
 
 export default function Home() {
   return (
     <>
-      <AsideMain />
+      <AsideContent />
+      <MainContent />
     </>
   );
 }

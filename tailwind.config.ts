@@ -12,6 +12,10 @@ const config: Config = {
         sans: ["Roboto", "sans-serif"],
       },
       colors: {
+        "mascots-secundary": {
+          "50": "#f8f8f8",
+        },
+
         "mascots-primary": {
           "50": "#effefa",
           "100": "#c9fef1",
