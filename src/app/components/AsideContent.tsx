@@ -2,8 +2,8 @@ export function AsideContent() {
   return (
     <>
       <aside className="bg-mascots-primary-600 p-4 font-sans rounded-xl shadow-lg max-h-aisde-main-height mt-28">
-        <nav className="flex gap-2 justify-center">
-          <div className="w-1/2 flex flex-col justify-between">
+        <nav className="flex gap-2 justify-center h-full items-center">
+          <div className="flex flex-col h-full justify-around  w-full items-center">
             <a href="#">link</a>
             <a href="#">link</a>
             <a href="#">link</a>
