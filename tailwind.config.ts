@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        // Adicionando sua sombra personalizada
+        custom: "4px 4px 16px 0px #ccc",
+      },
       maxHeight: {
         // Adicionando a altura mínima de 133rem
         "aisde-main-height": "33.25rem",
