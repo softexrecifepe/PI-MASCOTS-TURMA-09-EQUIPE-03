@@ -1,11 +1,9 @@
-import { AsideContent } from "./components/AsideContent";
-import { MainContent } from "./components/MainContent";
+import { MainPage } from "./components/MainPage";
 
 export default function Home() {
   return (
     <>
-      <AsideContent />
-      <MainContent />
+      <MainPage />
     </>
   );
 }
