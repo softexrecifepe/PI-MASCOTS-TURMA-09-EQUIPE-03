@@ -1,6 +1,7 @@
 import { Images } from "./assets/images";
 import { ButtonHome } from "./components/ButtonHome";
 import { MainPage } from "./components/MainPage";
+import {FormsLogin} from "./components/FormsLogin";
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
       </header>
 
       <MainPage />
+      <FormsLogin/>
     </>
   );
 }
