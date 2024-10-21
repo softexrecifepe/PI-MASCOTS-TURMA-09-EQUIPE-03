@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        roboto: ["Roboto", "sans-serif"],
+      },
       boxShadow: {
         // Adicionando sua sombra personalizada
         custom: "4px 4px 16px 0px #ccc",
@@ -22,9 +25,6 @@ const config: Config = {
       },
       gridTemplateColumns: {
         "grid-main": "5.5rem 1fr",
-      },
-      fontFamily: {
-        sans: ["Roboto", "sans-serif"],
       },
       colors: {
         "mascots-secundary": {
