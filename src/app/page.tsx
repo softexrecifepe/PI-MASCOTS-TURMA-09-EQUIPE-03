@@ -8,9 +8,9 @@ export default function Home() {
     <>
       <header className="flex gap-8 items-center justify-center mt-8">
         <ButtonHome
-          Image={Images.Veterinarian}
-          h1="Internato"
-          p="Registre internamentos"
+          Image={Images.Clipboard}
+          h1="Exames"
+          p="Crie exames e precrições"
         />
         <ButtonHome
           Image={Images.Veterinary}
@@ -18,14 +18,14 @@ export default function Home() {
           p="Crie consultas e gerencie-as"
         />
         <ButtonHome
+          Image={Images.Veterinarian}
+          h1="Internato"
+          p="Registre internamentos"
+        />
+        <ButtonHome
           Image={Images.Vaccine}
           h1="Recursos"
           p="Exporte planilhas e gerencie recursos"
-        />
-        <ButtonHome
-          Image={Images.Clipboard}
-          h1="Exames"
-          p="Crie exames e precrições"
         />
       </header>
 
