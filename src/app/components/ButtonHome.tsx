@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { StaticImageData } from "next/image";
+import { StaticImageData } from "next/image"; //! react icons
 
 type ButtonProps = {
   Image: string | StaticImageData;
