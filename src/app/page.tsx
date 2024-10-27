@@ -1,7 +1,12 @@
 import { Images } from "./assets/images";
+import { AsideContent } from "./components/AsideContent";
+import { AsideNavItem } from "./components/AsideNavItem";
 import { ButtonHome } from "./components/ButtonHome";
+// import { MainPage } from "./components/MainPage";
+import { FormsLogin } from "./components/FormsLogin";
+import Header from "./components/Header";
+import { MainContent } from "./components/MainContent";
 import { MainPage } from "./components/MainPage";
-import {FormsLogin} from "./components/FormsLogin";
 
 export default function Home() {
   return (
@@ -29,8 +34,15 @@ export default function Home() {
         />
       </header>
 
-      <MainPage />
-      <FormsLogin/>
+      <MainPage>
+        <AsideContent>
+          <AsideNavItem />
+        </AsideContent>
+        <MainContent>
+          <h1>12987391823</h1>
+        </MainContent>
+      </MainPage>
+      <FormsLogin />
     </>
   );
 }

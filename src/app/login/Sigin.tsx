@@ -17,14 +17,14 @@ export function Sigin({ propsSigin }: siginProps) {
     >
       <div className="flex items-center gap-4">
         <button onClick={propsSigin}>
-          <GoArrowLeft className="size-10 fill-mascots-primary-800" />
+          <GoArrowLeft className="transition-all hover:fill-mascots-primary-400 size-10 fill-mascots-primary-800" />
         </button>
         <LogoLogin />
       </div>
 
       <div className="flex flex-col gap-2 w-full">
         <div className="w-full flex flex-col items-center gap-4">
-          <header className="text-mascots-primary-600 font-semibold text-xl">
+          <header className="text-mascots-primary-700 font-semibold text-xl">
             Cadastro
           </header>
           <form className="flex flex-col w-2/3 gap-4 justify-center">
