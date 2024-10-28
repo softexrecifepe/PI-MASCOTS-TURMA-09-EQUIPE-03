@@ -4,13 +4,14 @@ import { AsideNavItem } from "./components/AsideNavItem";
 import { ButtonHome } from "./components/ButtonHome";
 // import { MainPage } from "./components/MainPage";
 import { FormsLogin } from "./components/FormsLogin";
-import Header from "./components/Header";
+import  Header from "./components/header";
 import { MainContent } from "./components/MainContent";
 import { MainPage } from "./components/MainPage";
 
 export default function Home() {
   return (
     <>
+   
       <header className="flex gap-8 items-center justify-center mt-8">
         <ButtonHome
           Image={Images.Clipboard}
@@ -32,6 +33,7 @@ export default function Home() {
           h1="Recursos"
           p="Exporte planilhas e gerencie recursos"
         />
+        <Header/>
       </header>
 
       <MainPage>

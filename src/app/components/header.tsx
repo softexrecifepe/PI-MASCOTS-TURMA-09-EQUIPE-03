@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Usuario from "../img/usuario.png";
+import Usuario from "../assets/images/index";
 import { FaHome, FaFileMedical, FaHeartbeat, FaUser, FaBoxOpen, FaBell, FaRegUserCircle  } from "react-icons/fa"; 
 import { MdLocalHospital } from "react-icons/md";
 import Image from "next/image"; 
@@ -23,7 +23,7 @@ export default function Header() {
         <h1 className="text-lg font-bold">Mascot's</h1>
       </div>
       <nav>
-      <ul className="flex space-x-8"> }
+      <ul className="flex space-x-8"> {}
           <li className="flex items-center flex-1">
             <a href="#home" className="flex items-center space-x-2 hover:bg-white hover:text-black text-white p-2 rounded w-full text-left transition-colors duration-200">
               <FaHome size={24} className="transition-colors duration-200" />
