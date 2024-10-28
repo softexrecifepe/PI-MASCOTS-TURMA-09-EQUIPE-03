@@ -18,11 +18,11 @@ export function Login({
 }: loginProps) {
   return (
     <div
-      className={`transition-opacity absolute w-1/2 py-2 gap-4 left-auto inset-0 flex flex-col items-center bg-mascots-secundary-50 ${
+      className={`transition-opacity absolute w-1/2 py-10 gap-4 left-auto inset-0 flex flex-col items-center bg-mascots-secundary-50 ${
         !forgotPasswordButtonState ? "opacity-100" : "opacity-0 hidden"
       }`}
     >
-      <div className="flex flex-col items-center mt-10 gap-4">
+      <div className="flex flex-col items-center gap-4">
         <LogoLogin />
         <header className="text-mascots-primary-700 font-semibold text-xl">
           Login
@@ -35,7 +35,7 @@ export function Login({
         <LoginPageButton text="Entrar" />
       </form>
 
-      <div className="flex flex-col text-center gap-3 mt-5">
+      <div className="flex flex-col text-center gap-3 mt-2">
         <button
           className="transition-all hover:text-red-400"
           onClick={handleForgotPassword}

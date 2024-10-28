@@ -42,7 +42,7 @@ export default function login() {
 
           <div
             className={`transition-all absolute w-1/2 inset-0 flex items-center justify-center bg-mascots-secundary-50 ${
-              !siginButtonState ? "z-10" : "z-30 left-2/4"
+              !siginButtonState ? "z-10 -left-5" : "z-30 left-1/2"
             }`}
           >
             <img className="h-full" src={imgLogin1.src} />
