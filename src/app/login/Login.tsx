@@ -28,14 +28,17 @@ export function Login({
           Login
         </header>
       </div>
-      <form method="post" className="flex flex-col justify-center gap-4 w-72 ">
+      <form
+        method="post"
+        className="flex flex-col justify-center mt-4 gap-4 w-72 "
+      >
         <InputComponent id="login" placeholder="Login" type="text" />
         <InputComponent id="pass" placeholder="Senha" type="password" />
 
         <LoginPageButton text="Entrar" />
       </form>
 
-      <div className="flex flex-col text-center gap-3 mt-2">
+      <div className="flex flex-col text-center gap-3 mt-5">
         <button
           className="transition-all hover:text-red-400"
           onClick={handleForgotPassword}

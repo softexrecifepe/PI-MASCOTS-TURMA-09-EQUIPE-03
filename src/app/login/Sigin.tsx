@@ -3,7 +3,6 @@
 import { GoArrowLeft } from "react-icons/go";
 import { InputComponent } from "../components/InputComponent";
 import { LoginPageButton } from "../components/LoginPageButton";
-import { LogoLogin } from "../components/LogoLogin";
 import type { MouseEventHandler } from "react";
 import { LogoForms } from "./LogoForms";
 
@@ -16,19 +15,19 @@ export function Sigin({ propsSigin }: siginProps) {
     <div
       className={`transition-all inset-0 flex flex-col items-center gap-4 py-5 bg-mascots-secundary-50`}
     >
-      <div className="flex items-center justify-center gap-4">
+      <div className="w-full flex items-center mt-5 px-8 gap-10">
         <button onClick={propsSigin}>
           <GoArrowLeft className="transition-all hover:fill-mascots-primary-400 size-10 fill-mascots-primary-800" />
         </button>
         <LogoForms />
       </div>
 
-      <div className="flex flex-col gap-2 w-full">
+      <div className="flex flex-col gap-2 w-full mt-4">
         <div className="w-full flex flex-col gap-4 items-center">
           <header className="text-mascots-primary-700 font-semibold text-xl">
             Cadastro
           </header>
-          <form className="flex flex-col w-2/3 gap-2 justify-center">
+          <form className="flex flex-col w-2/3 gap-3 justify-center">
             <InputComponent id="login" placeholder="Login" type="text" />
 
             <InputComponent id="password" placeholder="Senha" type="password" />
@@ -39,7 +38,9 @@ export function Sigin({ propsSigin }: siginProps) {
               type="password"
             />
             <InputComponent id="email" placeholder="Email" type="email" />
-            <LoginPageButton text="Cadastrar" />
+            <div className="w-full mt-2">
+              <LoginPageButton text="Cadastrar" />
+            </div>
           </form>
         </div>
       </div>
