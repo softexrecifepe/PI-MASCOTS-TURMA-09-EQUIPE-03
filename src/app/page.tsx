@@ -11,7 +11,8 @@ import { MainPage } from "./components/MainPage";
 export default function Home() {
   return (
     <>
-   
+    <Header />
+
       <header className="flex gap-8 items-center justify-center mt-8">
         <ButtonHome
           Image={Images.Clipboard}
@@ -33,7 +34,6 @@ export default function Home() {
           h1="Recursos"
           p="Exporte planilhas e gerencie recursos"
         />
-        <Header/>
       </header>
 
       <MainPage>
