@@ -31,7 +31,7 @@ export default function login() {
   return (
     <>
       <main className="flex items-center justify-center h-screen w-full bg-[url('./assets/images/bgLogin.png')] bg-cover bg-center bg-no-repeat ">
-        <section className="relative bg-mascots-secundary-50 w-2/3 h-3/4 rounded-xl overflow-hidden grid grid-cols-2 shadow-2xl">
+        <section className="relative bg-mascots-secundary-50 w-custom-width h-custom-height rounded-xl overflow-hidden grid grid-cols-2 shadow-2xl">
           <Sigin propsSigin={handleBackSigin} />
 
           <ForgotPassword

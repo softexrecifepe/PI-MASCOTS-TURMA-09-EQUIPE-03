@@ -19,9 +19,11 @@ const config: Config = {
         // Adicionando a altura mínima de 133rem
         "aisde-main-height": "33.25rem",
       },
+      width: {
+        "custom-width": "58.1875rem", // 1091px em rem
+      },
       height: {
-        // Adicionando a largura personalizada de 932px convertida para rem
-        "height-main": "58.25rem",
+        "custom-height": "29.125rem", // 578px em rem
       },
       gridTemplateColumns: {
         "grid-main": "5.5rem 1fr",
