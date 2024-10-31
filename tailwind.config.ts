@@ -17,13 +17,14 @@ const config: Config = {
       },
       maxHeight: {
         // Adicionando a altura mínima de 133rem
-        "aisde-main-height": "33.25rem",
+        "aisde-main-height": "33rem",
       },
       width: {
-        "custom-width": "58.1875rem", // 1091px em rem
+        "custom-width": "58rem", // 1091px em rem
       },
       height: {
-        "custom-height": "29.125rem", // 578px em rem
+        "custom-height": "29rem", // 578px em rem
+        "main-content": "54rem",
       },
       gridTemplateColumns: {
         "grid-main": "5.5rem 1fr",

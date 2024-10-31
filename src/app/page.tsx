@@ -1,17 +1,18 @@
+import { FaHome } from "react-icons/fa";
 import { Images } from "./assets/images";
 import { AsideContent } from "./components/AsideContent";
 import { AsideNavItem } from "./components/AsideNavItem";
 import { ButtonHome } from "./components/ButtonHome";
 // import { MainPage } from "./components/MainPage";
 import { FormsLogin } from "./components/FormsLogin";
-import Header from "./components/header";
+import { HeaderPage } from "./components/HeaderPage";
 import { MainContent } from "./components/MainContent";
 import { MainPage } from "./components/MainPage";
 
 export default function Home() {
   return (
     <>
-      <Header />
+      <HeaderPage />
 
       <header className="flex gap-8 items-center justify-center mt-8">
         <ButtonHome
@@ -42,13 +43,13 @@ export default function Home() {
 
       <MainPage>
         <AsideContent>
-          <AsideNavItem />
+          <AsideNavItem text="Teste" icon={<FaHome />} />
+          <AsideNavItem text="Teste" icon={<FaHome />} />
         </AsideContent>
         <MainContent>
           <h1>12987391823</h1>
         </MainContent>
       </MainPage>
-      <FormsLogin />
     </>
   );
 }

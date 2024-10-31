@@ -10,7 +10,7 @@ import { FaBell, FaRegUserCircle } from "react-icons/fa";
 import Image from "next/image";
 import Icone from "../assets/images/icon.png";
 
-export default function Header() {
+export function HeaderPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -30,11 +30,11 @@ export default function Header() {
           <li className="flex items-center flex-1">
             <a
               href="#home"
-              className="flex items-center space-x-2 hover:bg-white hover:text-black text-white p-2 rounded w-full text-left transition-colors duration-200"
+              className="flex items-center space-x-2 hover:bg-white hover:text-black text-white p-2 rounded w-full text-left transition-colors duration-100"
             >
               <AiFillHome
                 size={24}
-                className="transition-colors duration-200"
+                className="transition-colors duration-100"
               />
               <span>Home</span>
             </a>
