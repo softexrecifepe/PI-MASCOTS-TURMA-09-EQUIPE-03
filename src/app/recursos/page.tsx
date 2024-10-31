@@ -1,9 +1,9 @@
-import Header from "../components/HeaderPage";
+import { HeaderPage } from "../components/HeaderPage";
 
 export default function Recursos() {
   return (
     <>
-      <Header />
+      <HeaderPage />
       <p>teste</p>
     </>
   );

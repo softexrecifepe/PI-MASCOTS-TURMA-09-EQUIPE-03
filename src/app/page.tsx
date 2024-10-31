@@ -1,5 +1,6 @@
-import { FaHome } from "react-icons/fa";
+import { FaBook, FaHome } from "react-icons/fa";
 import { Images } from "./assets/images";
+import { Aside2Nav } from "./components/Aside2Nav";
 import { AsideContent } from "./components/AsideContent";
 import { AsideNavItem } from "./components/AsideNavItem";
 import { ButtonHome } from "./components/ButtonHome";
@@ -42,14 +43,17 @@ export default function Home() {
       </header>
 
       <MainPage>
-        <AsideContent>
-          <AsideNavItem text="Teste" icon={<FaHome />} />
-          <AsideNavItem text="Teste" icon={<FaHome />} />
-        </AsideContent>
+        <Aside2Nav
+          icon1={<FaHome size={24} />}
+          text1="Home"
+          icon2={<FaBook size={24} />}
+          text2="Ler"
+        />
         <MainContent>
-          <h1>12987391823</h1>
+          <h1>teste</h1>
         </MainContent>
       </MainPage>
+      <FormsLogin />
     </>
   );
 }
