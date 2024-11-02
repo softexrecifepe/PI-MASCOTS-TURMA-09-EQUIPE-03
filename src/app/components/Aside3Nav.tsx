@@ -1,16 +1,15 @@
 "use client";
 
-import { useState, type MouseEventHandler } from "react";
+import { useState } from "react";
 import { AsideNavItem } from "./AsideNavItem";
 
 interface Aside2Nav {
   icon1: JSX.Element;
   text1: string;
-  onClick1: MouseEventHandler;
-  onClick2: MouseEventHandler;
   icon2: JSX.Element;
   text2: string;
-  width: string;
+  icon3: JSX.Element;
+  text3: string;
 }
 
 export function Aside2Nav({
@@ -18,9 +17,8 @@ export function Aside2Nav({
   text1,
   icon2,
   text2,
-  width,
-  onClick1,
-  onClick2,
+  icon3,
+  text3,
 }: Aside2Nav) {
   const [isHover, setIsHover] = useState(false);
 
@@ -37,22 +35,13 @@ export function Aside2Nav({
     <aside
       onMouseEnter={handleHoverIn}
       onMouseLeave={handleHoverOut}
-      className={`bg-mascots-primary-600 inset-0 px-3 py-4 font-sans rounded-xl h-fit shadow-custom sticky top-5 transition-all w-20 hover:${width}`}
+      className={`bg-mascots-primary-600 p-4 font-sans rounded-xl h-fit shadow-custom sticky w-20 top-5 hover:w-40 transition-all`}
     >
       <nav className="flex gap-2 h-full items-center">
         <div className="transition-all flex flex-col gap-5 h-full justify-around w-full items-start">
-          <AsideNavItem
-            onClick={onClick1}
-            icon={icon1}
-            text={text1}
-            hover={isHover}
-          />
-          <AsideNavItem
-            onClick={onClick2}
-            icon={icon2}
-            text={text2}
-            hover={isHover}
-          />
+          <AsideNavItem icon={icon1} text={text1} hover={isHover} />
+          <AsideNavItem icon={icon2} text={text2} hover={isHover} />
+          <AsideNavItem icon={icon3} text={text3} hover={isHover} />
         </div>
       </nav>
     </aside>

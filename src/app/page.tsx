@@ -9,6 +9,8 @@ import { FormsLogin } from "./components/FormsLogin";
 import { HeaderPage } from "./components/HeaderPage";
 import { MainContent } from "./components/MainContent";
 import { MainPage } from "./components/MainPage";
+import { ConsultasContent } from "./consultas/ConsultasContent";
+import { ExamesContent } from "./exames/ExamesContent";
 
 export default function Home() {
   return (
@@ -41,19 +43,6 @@ export default function Home() {
           p="Exporte planilhas e gerencie recursos"
         />
       </header>
-
-      <MainPage>
-        <Aside2Nav
-          icon1={<FaHome size={24} />}
-          text1="Home"
-          icon2={<FaBook size={24} />}
-          text2="Ler"
-        />
-        <MainContent>
-          <h1>teste</h1>
-        </MainContent>
-      </MainPage>
-      <FormsLogin />
     </>
   );
 }

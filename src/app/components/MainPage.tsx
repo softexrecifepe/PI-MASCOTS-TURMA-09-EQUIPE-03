@@ -7,7 +7,9 @@ interface MainPageProps {
 export function MainPage({ children }: MainPageProps) {
   return (
     <>
-      <div className="flex w-full p-10 gap-8 h-height-main">{children}</div>
+      <div className="grid grid-cols-grid-main w-full p-10 gap-2 h-height-main">
+        {children}
+      </div>
     </>
   );
 }

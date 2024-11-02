@@ -18,6 +18,10 @@ const config: Config = {
       maxHeight: {
         // Adicionando a altura mínima de 133rem
         "aisde-main-height": "33rem",
+        "main-content": "54rem",
+      },
+      minHeight: {
+        "main-content": "54rem",
       },
       width: {
         "custom-width": "58rem", // 1091px em rem
