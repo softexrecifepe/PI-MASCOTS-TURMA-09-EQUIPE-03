@@ -26,9 +26,11 @@ export function InternatoContent() {
         icon1={<BsClipboardPlusFill />}
         text1="Visualizar Internato"
         onClick1={handleVisualizarInternato}
+        isAces1={visualizarInternatos}
         icon2={<IoMdAddCircle />}
         text2="Marcar Internação"
         onClick2={handleMarcarInternato}
+        isAces2={marcarInternato}
         width="w-64"
       />
 

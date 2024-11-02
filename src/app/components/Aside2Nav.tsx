@@ -11,6 +11,8 @@ interface Aside2Nav {
   icon2: JSX.Element;
   text2: string;
   width: string;
+  isAces1: boolean;
+  isAces2: boolean;
 }
 
 export function Aside2Nav({
@@ -21,6 +23,8 @@ export function Aside2Nav({
   width,
   onClick1,
   onClick2,
+  isAces1,
+  isAces2,
 }: Aside2Nav) {
   const [isHover, setIsHover] = useState(false);
 
@@ -46,12 +50,14 @@ export function Aside2Nav({
             icon={icon1}
             text={text1}
             hover={isHover}
+            isAcess={isAces1}
           />
           <AsideNavItem
             onClick={onClick2}
             icon={icon2}
             text={text2}
             hover={isHover}
+            isAcess={isAces2}
           />
         </div>
       </nav>

@@ -26,9 +26,11 @@ export function RecursosContent() {
         icon1={<BsClipboardPlusFill />}
         text1="Visualizar Recurso"
         onClick1={handleVisualizarRecursos}
+        isAces1={visualizarRecursos}
         icon2={<IoMdAddCircle />}
         text2="Registrar Recurso"
         onClick2={handleRegistrarRecurso}
+        isAces2={registarRecursos}
         width="w-64"
       />
 

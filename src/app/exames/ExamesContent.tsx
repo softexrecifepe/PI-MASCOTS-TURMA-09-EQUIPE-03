@@ -26,9 +26,11 @@ export function ExamesContent() {
         icon1={<BsClipboardPlusFill />}
         text1="Visualizar Exames"
         onClick1={handleVisualizarExames}
+        isAces1={visualizarExames}
         icon2={<IoMdAddCircle />}
         text2="Criar Exame"
         onClick2={handleCriarExames}
+        isAces2={marcarExame}
         width="w-64"
       />
 

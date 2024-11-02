@@ -26,9 +26,11 @@ export function PetsContent() {
         icon1={<BsClipboardPlusFill />}
         text1="Visualizar Pets"
         onClick1={handleVisualizarPets}
+        isAces1={visualizarPets}
         icon2={<IoMdAddCircle />}
         text2="Cadastrar Pet"
         onClick2={handleCadastrarPet}
+        isAces2={cadastrarPet}
         width="w-64"
       />
 

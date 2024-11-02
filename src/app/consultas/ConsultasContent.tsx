@@ -26,9 +26,11 @@ export function ConsultasContent() {
         icon1={<BsClipboardPlusFill />}
         text1="Visualizar Consultas"
         onClick1={handleVisualizarConsultas}
+        isAces1={visualizarConsultas}
         icon2={<IoMdAddCircle />}
         text2="Criar Consulta"
         onClick2={handleMarcarConsulta}
+        isAces2={marcarConsulta}
         width="w-64"
       />
 

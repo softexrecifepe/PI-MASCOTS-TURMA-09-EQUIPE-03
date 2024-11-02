@@ -7,6 +7,7 @@ interface AsideNavItemProps {
   text: string;
   hover: boolean;
   onClick: MouseEventHandler;
+  isAcess: boolean;
 }
 
 export function AsideNavItem({
@@ -14,11 +15,12 @@ export function AsideNavItem({
   text,
   hover,
   onClick,
+  isAcess,
 }: AsideNavItemProps) {
   return (
     <button
       onClick={onClick}
-      className="bg-mascots-primary-50 p-4 rounded-full flex items-center gap-2 hover:bg-mascots-primary-500 transition-all"
+      className={`${isAcess ? "p-4 rounded-full flex items-center gap-2 hover:bg-mascots-primary-500 transition-all bg-mascots-secundary-50" : "p-4 rounded-full flex items-center gap-2 hover:bg-mascots-primary-800 transition-all text-white active:bg-mascots-primary-500 active:text-black"} `}
     >
       {icon}
       <div
