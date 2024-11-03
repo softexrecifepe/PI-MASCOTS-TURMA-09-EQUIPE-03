@@ -9,7 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        roboto: ["Roboto", "sans-serif"],
+        poppins: ["var(--font-poppins)", "sans-serif"],
+        jetbrains: ["var(--font-jetbrains)", "monospace"],
+        montserrat: ["var(--font-montserrat)", "sans-serif"],
+        roboto: ["var(--font-roboto)", "sans-serif"],
       },
       boxShadow: {
         // Adicionando sua sombra personalizada

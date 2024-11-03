@@ -41,7 +41,7 @@ export function Aside2Nav({
     <aside
       onMouseEnter={handleHoverIn}
       onMouseLeave={handleHoverOut}
-      className={`bg-mascots-primary-600 inset-0 px-3 py-4 font-sans rounded-xl h-fit shadow-custom sticky top-5 transition-all w-20 hover:${width}`}
+      className={`bg-mascots-primary-600 inset-0 px-3 font-roboto py-4 rounded-xl h-fit shadow-custom sticky top-5 transition-all w-20 hover:${width}`}
     >
       <nav className="flex gap-2 h-full items-center">
         <div className="transition-all flex flex-col gap-5 h-full justify-around w-full items-start">

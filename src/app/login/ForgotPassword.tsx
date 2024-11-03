@@ -29,7 +29,7 @@ export function ForgotPassword({
         <LogoForms />
       </div>
       <div className="w-full mt-10 flex flex-col items-center gap-4">
-        <header className="text-mascots-primary-700 font-semibold text-xl">
+        <header className="text-mascots-primary-700 font-montserrat font-semibold text-xl">
           Esqueceu a Senha
         </header>
         <form className="flex flex-col w-2/3 mt-4 gap-4 justify-center">

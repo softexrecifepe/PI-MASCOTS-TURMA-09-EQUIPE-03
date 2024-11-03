@@ -24,7 +24,7 @@ export function Sigin({ propsSigin }: siginProps) {
 
       <div className="flex flex-col gap-2 w-full mt-4">
         <div className="w-full flex flex-col gap-4 items-center">
-          <header className="text-mascots-primary-700 font-semibold text-xl">
+          <header className="text-mascots-primary-700 font-montserrat font-semibold text-xl">
             Cadastro
           </header>
           <form className="flex flex-col w-2/3 gap-3 justify-center">

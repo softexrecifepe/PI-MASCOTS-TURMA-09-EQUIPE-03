@@ -18,7 +18,7 @@ export function InputComponent({ type, id, label, placeholder }: InputProps) {
         type={type}
         id={id}
         placeholder={placeholder}
-        className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-mascots-primary-500 transition-all "
+        className="w-full p-2 border font-jetbrains font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-mascots-primary-500 font-jebrains transition-all "
         required
       />
     </>

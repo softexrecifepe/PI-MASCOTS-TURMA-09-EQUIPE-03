@@ -18,13 +18,13 @@ export function Login({
 }: loginProps) {
   return (
     <div
-      className={`transition-opacity absolute w-1/2 py-10 gap-4 left-auto inset-0 flex flex-col items-center bg-mascots-secundary-50 ${
+      className={`transition-opacity font-roboto absolute w-1/2 py-10 gap-4 left-auto inset-0 flex flex-col items-center bg-mascots-secundary-50 ${
         !forgotPasswordButtonState ? "opacity-100" : "opacity-0 hidden"
       }`}
     >
       <div className="flex flex-col items-center gap-4">
         <LogoLogin />
-        <header className="text-mascots-primary-700 font-semibold text-xl">
+        <header className="text-mascots-primary-700 font-montserrat font-semibold text-xl">
           Login
         </header>
       </div>
