@@ -4,7 +4,7 @@ import { RecursosContent } from "./RecursosContent";
 export default function Recursos() {
   return (
     <>
-      <HeaderPage />
+      <HeaderPage recursos={true} />
       <RecursosContent />
     </>
   );

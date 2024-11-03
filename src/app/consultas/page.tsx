@@ -6,7 +6,7 @@ import { HeaderPage } from "../components/HeaderPage";
 export default function Exames() {
   return (
     <>
-      <HeaderPage />
+      <HeaderPage consutas={true} />
       <ConsultasContent />
     </>
   );

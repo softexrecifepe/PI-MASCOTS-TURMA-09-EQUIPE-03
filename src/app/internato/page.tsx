@@ -6,7 +6,7 @@ import { InternatoContent } from "./InternatoContent";
 export default function Internato() {
   return (
     <>
-      <HeaderPage />
+      <HeaderPage internato={true} />
       <InternatoContent />
     </>
   );

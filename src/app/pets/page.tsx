@@ -4,7 +4,7 @@ import { PetsContent } from "./PetsContent";
 export default function Pets() {
   return (
     <>
-      <HeaderPage />
+      <HeaderPage pets={true} />
       <PetsContent />
     </>
   );

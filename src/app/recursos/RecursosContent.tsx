@@ -2,8 +2,10 @@
 import { BsClipboardPlusFill } from "react-icons/bs";
 import { Aside2Nav } from "../components/Aside2Nav";
 import { IoMdAddCircle } from "react-icons/io";
+import { TbAlignBoxBottomCenterFilled } from "react-icons/tb";
 import { MainContent } from "../components/MainContent";
 import { useState } from "react";
+import { MdAddBox } from "react-icons/md";
 
 export function RecursosContent() {
   const [visualizarRecursos, setVisualizarRecursos] = useState(true);
@@ -23,11 +25,11 @@ export function RecursosContent() {
   return (
     <main className="flex px-4 py-4 gap-2 h-dvh">
       <Aside2Nav
-        icon1={<BsClipboardPlusFill />}
+        icon1={<TbAlignBoxBottomCenterFilled size={24} />}
         text1="Visualizar Recurso"
         onClick1={handleVisualizarRecursos}
         isAces1={visualizarRecursos}
-        icon2={<IoMdAddCircle />}
+        icon2={<MdAddBox size={24} />}
         text2="Registrar Recurso"
         onClick2={handleRegistrarRecurso}
         isAces2={registarRecursos}

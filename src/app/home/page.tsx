@@ -5,7 +5,7 @@ import { HeaderPage } from "../components/HeaderPage";
 export default function Home() {
   return (
     <>
-      <HeaderPage />
+      <HeaderPage home={true} />
 
       <header className="flex gap-4 px-10 items-center font-roboto justify-center mt-8">
         <ButtonHome

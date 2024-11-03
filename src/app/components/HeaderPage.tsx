@@ -12,7 +12,23 @@ import Image from "next/image";
 import Icone from "../assets/images/icon.png";
 import Link from "next/link";
 
-export function HeaderPage() {
+interface HeaderPageProps {
+  home?: boolean;
+  exames?: boolean;
+  consutas?: boolean;
+  internato?: boolean;
+  recursos?: boolean;
+  pets?: boolean;
+}
+
+export function HeaderPage({
+  consutas,
+  exames,
+  home,
+  internato,
+  pets,
+  recursos,
+}: HeaderPageProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -27,12 +43,12 @@ export function HeaderPage() {
         />
         <h1 className="text-lg font-bold">Mascot's</h1>
       </div>
-      <nav>
-        <ul className="flex space-x-8">
-          <li className="flex items-center flex-1">
+      <nav className="w-full">
+        <ul className="flex gap-5 justify-center">
+          <li className={`${home ? "flex items-center -translate-x-80" : ""}`}>
             <Link
               href="/home"
-              className="flex items-center space-x-2 hover:bg-white hover:text-black text-white p-2 rounded w-full text-left transition-colors duration-100"
+              className={`${home ? "flex bg-mascots-primary-800 space-x-2 text-white items-center hover:bg-white hover:text-black p-2 rounded w-full text-left transition-colors duration-100" : "flex bg-transparent text-white items-center space-x-2 hover:bg-white hover:text-black p-2 rounded w-full text-left transition-colors duration-100"}`}
             >
               <AiFillHome
                 size={24}
@@ -41,60 +57,62 @@ export function HeaderPage() {
               <span>Home</span>
             </Link>
           </li>
-          <li className="flex items-center flex-1">
-            <Link
-              href="/exames"
-              className="flex items-center space-x-2 hover:bg-white hover:text-black text-white p-2 rounded w-full text-left transition-colors duration-200"
-            >
-              <MdAssignment
-                size={24}
-                className="transition-colors duration-200"
-              />
-              <span>Exames</span>
-            </Link>
-          </li>
-          <li className="flex items-center flex-1">
-            <Link
-              href="/consultas"
-              className="flex items-center space-x-2 hover:bg-white hover:text-black text-white p-2 rounded w-full text-left transition-colors duration-200"
-            >
-              <FaHeartbeat
-                size={24}
-                className="transition-colors duration-200"
-              />
-              <span>Consultas</span>
-            </Link>
-          </li>
-          <li className="flex items-center flex-1">
-            <Link
-              href="/internato"
-              className="flex items-center space-x-2 hover:bg-white hover:text-black text-white p-2 rounded w-full text-left transition-colors duration-200"
-            >
-              <FiActivity
-                size={24}
-                className="transition-colors duration-200"
-              />
-              <span>Internato</span>
-            </Link>
-          </li>
-          <li className="flex items-center flex-1">
-            <Link
-              href="/recursos"
-              className="flex items-center space-x-2 hover:bg-white hover:text-black text-white p-2 rounded w-full text-left transition-colors duration-200"
-            >
-              <FiBox size={24} className="transition-colors duration-200" />
-              <span>Recursos</span>
-            </Link>
-          </li>
-          <li className="flex items-center flex-1">
-            <Link
-              href="/pets"
-              className="flex items-center space-x-2 hover:bg-white hover:text-black text-white p-2 rounded w-full text-left transition-colors duration-200"
-            >
-              <FaPaw size={24} className="transition-colors duration-200" />
-              <span>Pets</span>
-            </Link>
-          </li>
+          <div className={`${home ? "hidden " : "flex gap-5"}`}>
+            <li className="flex items-center flex-1">
+              <Link
+                href="/exames"
+                className={`${exames ? "flex bg-mascots-primary-800 text-white items-center space-x-2 hover:bg-white hover:text-black p-2 rounded w-full text-left transition-colors duration-100" : "flex bg-transparent text-white items-center space-x-2 hover:bg-white hover:text-black p-2 rounded w-full text-left transition-colors duration-100"}`}
+              >
+                <MdAssignment
+                  size={24}
+                  className="transition-colors duration-200"
+                />
+                <span>Exames</span>
+              </Link>
+            </li>
+            <li className="flex items-center flex-1">
+              <Link
+                href="/consultas"
+                className={`${consutas ? "flex bg-mascots-primary-800 text-white items-center space-x-2 hover:bg-white hover:text-black p-2 rounded w-full text-left transition-colors duration-100" : "flex bg-transparent text-white items-center space-x-2 hover:bg-white hover:text-black p-2 rounded w-full text-left transition-colors duration-100"}`}
+              >
+                <FaHeartbeat
+                  size={24}
+                  className="transition-colors duration-200"
+                />
+                <span>Consultas</span>
+              </Link>
+            </li>
+            <li className="flex items-center flex-1">
+              <Link
+                href="/internato"
+                className={`${internato ? "flex bg-mascots-primary-800 text-white items-center space-x-2 hover:bg-white hover:text-black p-2 rounded w-full text-left transition-colors duration-100" : "flex bg-transparent text-white items-center space-x-2 hover:bg-white hover:text-black p-2 rounded w-full text-left transition-colors duration-100"}`}
+              >
+                <FiActivity
+                  size={24}
+                  className="transition-colors duration-200"
+                />
+                <span>Internato</span>
+              </Link>
+            </li>
+            <li className="flex items-center flex-1">
+              <Link
+                href="/recursos"
+                className={`${recursos ? "flex bg-mascots-primary-800 text-white items-center space-x-2 hover:bg-white hover:text-black p-2 rounded w-full text-left transition-colors duration-100" : "flex bg-transparent text-white items-center space-x-2 hover:bg-white hover:text-black p-2 rounded w-full text-left transition-colors duration-100"}`}
+              >
+                <FiBox size={24} className="transition-colors duration-200" />
+                <span>Recursos</span>
+              </Link>
+            </li>
+            <li className="flex items-center flex-1">
+              <Link
+                href="/pets"
+                className={`${pets ? "flex bg-mascots-primary-800 text-white items-center space-x-2 hover:bg-white hover:text-black p-2 rounded w-full text-left transition-colors duration-100" : "flex bg-transparent text-white items-center space-x-2 hover:bg-white hover:text-black p-2 rounded w-full text-left transition-colors duration-100"}`}
+              >
+                <FaPaw size={24} className="transition-colors duration-200" />
+                <span>Pets</span>
+              </Link>
+            </li>
+          </div>
         </ul>
       </nav>
       <div className="ml-4 flex items-center space-x-4">

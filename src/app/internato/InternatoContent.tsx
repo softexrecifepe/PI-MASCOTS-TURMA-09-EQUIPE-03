@@ -4,6 +4,7 @@ import { Aside2Nav } from "../components/Aside2Nav";
 import { IoMdAddCircle } from "react-icons/io";
 import { MainContent } from "../components/MainContent";
 import { useState } from "react";
+import { TbActivityHeartbeat } from "react-icons/tb";
 
 export function InternatoContent() {
   const [visualizarInternatos, setVisualizarInternatos] = useState(true);
@@ -23,11 +24,11 @@ export function InternatoContent() {
   return (
     <main className="flex px-4 py-4 gap-2 h-dvh">
       <Aside2Nav
-        icon1={<BsClipboardPlusFill />}
+        icon1={<TbActivityHeartbeat size={24} />}
         text1="Visualizar Internato"
         onClick1={handleVisualizarInternato}
         isAces1={visualizarInternatos}
-        icon2={<IoMdAddCircle />}
+        icon2={<IoMdAddCircle size={24} />}
         text2="Marcar Internação"
         onClick2={handleMarcarInternato}
         isAces2={marcarInternato}

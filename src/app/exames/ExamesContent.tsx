@@ -1,9 +1,9 @@
 "use client";
-import { BsClipboardPlusFill, BsMenuButton } from "react-icons/bs";
 import { Aside2Nav } from "../components/Aside2Nav";
-import { IoMdAddCircle } from "react-icons/io";
+import { FaClipboardList } from "react-icons/fa";
 import { MainContent } from "../components/MainContent";
 import { useState } from "react";
+import { MdAssignmentAdd } from "react-icons/md";
 
 export function ExamesContent() {
   const [visualizarExames, setVisualizarExames] = useState(true);
@@ -23,11 +23,11 @@ export function ExamesContent() {
   return (
     <main className="flex px-4 py-4 gap-2 h-dvh">
       <Aside2Nav
-        icon1={<BsClipboardPlusFill />}
+        icon1={<FaClipboardList size={24} />}
         text1="Visualizar Exames"
         onClick1={handleVisualizarExames}
         isAces1={visualizarExames}
-        icon2={<IoMdAddCircle />}
+        icon2={<MdAssignmentAdd size={24} />}
         text2="Criar Exame"
         onClick2={handleCriarExames}
         isAces2={marcarExame}

@@ -1,8 +1,9 @@
 "use client";
-import { BsClipboardPlusFill } from "react-icons/bs";
+
 import { Aside2Nav } from "../components/Aside2Nav";
-import { IoMdAddCircle } from "react-icons/io";
 import { MainContent } from "../components/MainContent";
+import { FaHeart } from "react-icons/fa";
+import { FaHeartCirclePlus } from "react-icons/fa6";
 import { useState } from "react";
 
 export function ConsultasContent() {
@@ -23,11 +24,11 @@ export function ConsultasContent() {
   return (
     <main className="flex px-4 py-4 gap-2 h-dvh">
       <Aside2Nav
-        icon1={<BsClipboardPlusFill />}
+        icon1={<FaHeart size={24} />}
         text1="Visualizar Consultas"
         onClick1={handleVisualizarConsultas}
         isAces1={visualizarConsultas}
-        icon2={<IoMdAddCircle />}
+        icon2={<FaHeartCirclePlus size={24} />}
         text2="Criar Consulta"
         onClick2={handleMarcarConsulta}
         isAces2={marcarConsulta}
