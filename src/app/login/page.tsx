@@ -6,7 +6,7 @@ import { Sigin } from "./Sigin";
 import { ForgotPassword } from "./ForgotPassword";
 import { Login } from "./Login";
 
-export default function login() {
+export function LoginPage() {
   const [forgotPasswordButtonState, setforgotPasswordButtonState] =
     useState(false);
 
