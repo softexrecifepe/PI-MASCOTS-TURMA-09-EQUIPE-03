@@ -41,7 +41,7 @@ export function HeaderPage({
           height={32}
           className="mr-2"
         />
-        <h1 className="text-lg font-bold">Mascot's</h1>
+        {/* <h1 className="text-lg font-bold">Mascot's</h1> */}
       </div>
       <nav className="w-full">
         <ul className="flex gap-5 justify-center">
