@@ -14,8 +14,8 @@ export function ButtonHome(props: ButtonProps) {
       href={props.href}
       className="flex items-center gap-5 p-5 bg-mascots-primary-600 max-w-64 border rounded-xl transition-all duration-300 hover:bg-mascots-primary-700 cursor-pointer font-sans shadow-custom text-white active:bg-mascots-primary-500"
     >
-      <div className="p-4 bg-mascots-primary-50 border rounded-full ">
-        <Image src={props.Image} alt={props.h1} width={24} height={24} />
+      <div className="p-3 flex items-center bg-mascots-primary-50 border rounded-full ">
+        <Image src={props.Image} alt={props.h1} width={36} height={36} />
       </div>
 
       <div className="text-left flex flex-col gap-1">

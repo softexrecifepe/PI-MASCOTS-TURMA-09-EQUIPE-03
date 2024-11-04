@@ -30,11 +30,11 @@ export default function Home() {
           href="/recursos"
           Image={Images.Vaccine}
           h1="Recursos"
-          p="Exporte planilhas e gerencie recursos"
+          p="Gerencie recursos"
         />
         <ButtonHome
           href="/pets"
-          Image={Images.Vaccine}
+          Image={Images.pata}
           h1="Pets"
           p="Cadastre pets e tutores"
         />

@@ -30,7 +30,7 @@ export function Login({
       </div>
       <form
         method="post"
-        className="flex flex-col justify-center mt-4 gap-4 w-72 "
+        className="flex flex-col justify-center mt-3 gap-4 w-72 "
       >
         <InputComponent id="login" placeholder="Login" type="text" />
         <InputComponent id="pass" placeholder="Senha" type="password" />
