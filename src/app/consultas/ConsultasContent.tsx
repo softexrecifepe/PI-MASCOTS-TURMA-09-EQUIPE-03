@@ -1,9 +1,11 @@
 "use client";
 
 import { Aside2Nav } from "../components/Aside2Nav";
+
 import { MainContent } from "../components/MainContent";
 import { FaHeart } from "react-icons/fa";
 import { FaHeartCirclePlus } from "react-icons/fa6";
+
 import { useState } from "react";
 
 export function ConsultasContent() {

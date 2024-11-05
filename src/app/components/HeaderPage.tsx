@@ -24,7 +24,7 @@ interface HeaderPageProps {
 export function HeaderPage({
   consutas,
   exames,
-  home,
+  // home,
   internato,
   pets,
   recursos,
@@ -45,7 +45,7 @@ export function HeaderPage({
       </div>
       <nav className="w-full">
         <ul className="flex gap-5 justify-center">
-          <li className={`${home ? "flex items-center -translate-x-80" : ""}`}>
+          {/* <li className={`${home ? "flex items-center -translate-x-80" : ""}`}>
             <Link
               href="/home"
               className={`${home ? "flex bg-mascots-primary-800 space-x-2 text-white items-center hover:bg-white hover:text-black p-2 rounded w-full text-left transition-colors duration-100" : "flex bg-transparent text-white items-center space-x-2 hover:bg-white hover:text-black p-2 rounded w-full text-left transition-colors duration-100"}`}
@@ -55,21 +55,9 @@ export function HeaderPage({
                 className="transition-colors duration-100"
               />
               <span>Home</span>
-            </Link>
-          </li>
-          <div className={`${home ? "hidden " : "flex gap-5"}`}>
-            <li className="flex items-center flex-1">
-              <Link
-                href="/exames"
-                className={`${exames ? "flex bg-mascots-primary-800 text-white items-center space-x-2 hover:bg-white hover:text-black p-2 rounded w-full text-left transition-colors duration-100" : "flex bg-transparent text-white items-center space-x-2 hover:bg-white hover:text-black p-2 rounded w-full text-left transition-colors duration-100"}`}
-              >
-                <MdAssignment
-                  size={24}
-                  className="transition-colors duration-200"
-                />
-                <span>Exames</span>
               </Link>
-            </li>
+              </li> */}
+          <div className="flex gap-5">
             <li className="flex items-center flex-1">
               <Link
                 href="/consultas"
@@ -80,6 +68,18 @@ export function HeaderPage({
                   className="transition-colors duration-200"
                 />
                 <span>Consultas</span>
+              </Link>
+            </li>
+            <li className="flex items-center flex-1">
+              <Link
+                href="/exames"
+                className={`${exames ? "flex bg-mascots-primary-800 text-white items-center space-x-2 hover:bg-white hover:text-black p-2 rounded w-full text-left transition-colors duration-100" : "flex bg-transparent text-white items-center space-x-2 hover:bg-white hover:text-black p-2 rounded w-full text-left transition-colors duration-100"}`}
+              >
+                <MdAssignment
+                  size={24}
+                  className="transition-colors duration-200"
+                />
+                <span>Exames</span>
               </Link>
             </li>
             <li className="flex items-center flex-1">
