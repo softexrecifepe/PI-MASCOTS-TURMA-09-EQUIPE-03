@@ -5,6 +5,7 @@ import { IoMdAddCircle } from "react-icons/io";
 import { MainContent } from "../components/MainContent";
 import { useState } from "react";
 import { TbActivityHeartbeat } from "react-icons/tb";
+import { MdAddBox } from "react-icons/md";
 
 export function InternatoContent() {
   const [visualizarInternatos, setVisualizarInternatos] = useState(true);
@@ -28,7 +29,7 @@ export function InternatoContent() {
         text1="Visualizar Internato"
         onClick1={handleVisualizarInternato}
         isAces1={visualizarInternatos}
-        icon2={<IoMdAddCircle size={24} />}
+        icon2={<MdAddBox size={24} />}
         text2="Marcar Internação"
         onClick2={handleMarcarInternato}
         isAces2={marcarInternato}

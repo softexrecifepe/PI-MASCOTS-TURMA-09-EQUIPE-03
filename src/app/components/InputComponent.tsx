@@ -1,9 +1,13 @@
+import type { ReactEventHandler } from "react";
+
 interface InputProps {
   type: string;
   maxLenght?: number;
   id: string;
   label?: string;
   placeholder?: string;
+  onchange: ReactEventHandler;
+  value: string;
 }
 
 export function InputComponent({
@@ -12,6 +16,8 @@ export function InputComponent({
   label,
   placeholder,
   maxLenght,
+  onchange,
+  value,
 }: InputProps) {
   return (
     <>
@@ -20,6 +26,8 @@ export function InputComponent({
           {label}
         </label>
         <input
+          value={value}
+          onChange={onchange}
           type={type}
           id={id}
           maxLength={maxLenght}
