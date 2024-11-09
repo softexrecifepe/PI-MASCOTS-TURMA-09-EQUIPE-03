@@ -27,6 +27,7 @@ const config: Config = {
         "main-content": "54rem",
       },
       width: {
+        "cards-pets": "calc(25% - 1.5rem)",
         "custom-width": "58rem", // 1091px em rem
       },
       height: {
