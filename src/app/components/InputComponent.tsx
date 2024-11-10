@@ -6,8 +6,8 @@ interface InputProps {
   id: string;
   label?: string;
   placeholder?: string;
-  onchange: ReactEventHandler;
-  value: string;
+  onchange?: ReactEventHandler;
+  value: string | undefined;
   readOnly?: boolean;
 }
 
@@ -36,7 +36,9 @@ export function InputComponent({
         maxLength={maxLenght}
         placeholder={placeholder}
         readOnly={readOnly}
-        className="w-full p-2 border font-jetbrains font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-mascots-primary-500 transition-all"
+        className={`w-full p-2 border font-jetbrains h-full font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-mascots-primary-500 transition-all ${
+          readOnly ? "bg-gray-200 text-gray-800" : "bg-white"
+        }`}
         required
       />
     </div>

@@ -10,7 +10,7 @@ export function MainContent({ children, visualize, zIndex }: mainContentProps) {
   return (
     <>
       <main
-        className={`${visualize ? `bg-mascots-secundary-50 transition-all font-roboto shadow-custom rounded-md w-full ${zIndex} p-8 h-fit absolute` : "opacity-0 hidden"}`}
+        className={`${visualize ? `bg-mascots-secundary-50 transition-all h-fit font-roboto shadow-custom rounded-md w-full ${zIndex} p-8 h-fit absolute` : "opacity-0 hidden"}`}
       >
         {children}
       </main>

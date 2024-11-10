@@ -95,7 +95,7 @@ export function PetsContent() {
   }
 
   return (
-    <main className="flex px-4 py-4 gap-2 h-dvh">
+    <main className="flex px-4 py-4 gap-2 min-h-screen">
       <Aside2Nav
         icon1={<MdOutlinePets size={24} />}
         text1="Visualizar Pets"
@@ -108,7 +108,7 @@ export function PetsContent() {
         width="w-64"
       />
 
-      <div className="flex w-full flex-col relative ">
+      <div className="flex w-full h-fit flex-col relative ">
         <MainContent zIndex="z-40" visualize={visualizarPets}>
           <div className="flex flex-col gap-14">
             <div className="flex flex-col gap-4">
