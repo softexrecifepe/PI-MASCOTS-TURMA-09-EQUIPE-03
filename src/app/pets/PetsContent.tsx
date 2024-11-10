@@ -113,7 +113,13 @@ export function PetsContent() {
           <div className="flex flex-col gap-14">
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-2 border-b-2 pb-1  w-fit  border-b-mascots-primary-700">
-                <Image src={pata} alt="PetIcon" width={32} height={32} />
+                <Image
+                  src={pata}
+                  alt="PetIcon"
+                  unoptimized
+                  width={40}
+                  height={40}
+                />
                 <h1 className="text-2xl">Pets</h1>
               </div>
               <p className="text-gray-700 font-jetbrains">

@@ -2,13 +2,15 @@
 import { Aside2Nav } from "../components/Aside2Nav";
 import { FaClipboardList, FaSearch, FaTable } from "react-icons/fa";
 import { MainContent } from "../components/MainContent";
-import { useEffect, useState, type ChangeEvent } from "react";
+import { useEffect, useRef, useState, type ChangeEvent } from "react";
 import { MdAssignmentAdd } from "react-icons/md";
 import { ExamesForms } from "./ExamesForms";
 
 import prancheta from "../assets/images/prancheta.png";
 import Image from "next/image";
 import { InputComponent } from "../components/InputComponent";
+import { ExameCard } from "./ExameCards";
+import { ExamesInfo } from "./ExamesInfo";
 
 interface Tutor {
   name: string;
@@ -34,6 +36,9 @@ interface Exame {
   detalhe: string;
   tutorCpf: string;
   petName: string | undefined;
+  petId: string; // Adiciona petId como string
+  data: string;
+  id: string; // Adiciona o id único para o exame
 }
 
 interface Veterinario {
@@ -41,7 +46,6 @@ interface Veterinario {
   crv: string;
   id: string;
 }
-
 export function ExamesContent() {
   const [visualizarExames, setVisualizarExames] = useState(true);
   const [marcarExame, setMarcarExame] = useState(false);
@@ -63,22 +67,41 @@ export function ExamesContent() {
     );
 
     setArrayFilter(arrayFilterTemp);
-
-    console.log(arrayFilterTemp);
   }
 
   const [examesArray, setExamesArray] = useState<Exame[]>(() => {
     const saveExames = localStorage.getItem("examesArray");
-    return saveExames ? JSON.parse(saveExames) : [];
+    return saveExames ? JSON.parse(saveExames) : []; // Se não houver dados, retorna array vazio
   });
 
   useEffect(() => {
-    localStorage.setItem("examesArray", JSON.stringify(examesArray));
-  }, [examesArray]);
+    // Atualiza o localStorage sempre que examesArray mudar
+    if (examesArray.length > 0) {
+      localStorage.setItem("examesArray", JSON.stringify(examesArray));
+    }
+  }, [examesArray]); // Só atualiza quando examesArray muda
+
+  useEffect(() => {
+    // Quando a página carrega, recarrega examesArray do localStorage
+    const saveExames = localStorage.getItem("examesArray");
+    if (saveExames) {
+      setExamesArray(JSON.parse(saveExames));
+    }
+  }, []); // Só executa na montagem inicial do componente
 
   function onClickCleanSearchExame() {
     setSearchExame("");
     setActiveSearch("");
+  }
+
+  const bottomDivRef = useRef<HTMLDivElement>(null);
+  const [exameSelect, setExameSelect] = useState<Exame | null>(null);
+
+  function handlePetCardClick(exame: Exame) {
+    setExameSelect(exame);
+    if (bottomDivRef.current) {
+      bottomDivRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   }
 
   function handleVisualizarExames() {
@@ -89,7 +112,6 @@ export function ExamesContent() {
   function handleCriarExames() {
     setMarcarExame(true);
     setVisualizarExames(false);
-    // console.log(marcarConsulta);
   }
 
   return (
@@ -105,13 +127,18 @@ export function ExamesContent() {
         isAces2={marcarExame}
         width="w-64"
       />
-
       <div className="flex w-full flex-col relative">
         <MainContent zIndex="z-40" visualize={visualizarExames}>
           <div className="flex flex-col gap-14">
             <div className="flex flex-col gap-4">
-              <div className="flex items-center gap-1 border-b-2 pb-1  w-fit  border-b-mascots-primary-700">
-                <Image alt="prancheta" src={prancheta} width={32} height={32} />
+              <div className="flex items-center gap-1 border-b-2 pb-1 w-fit border-b-mascots-primary-700">
+                <Image
+                  alt="prancheta"
+                  unoptimized
+                  src={prancheta}
+                  width={32}
+                  height={32}
+                />
                 <h1 className="text-2xl">Exames</h1>
               </div>
               <p className="text-gray-700 font-jetbrains">
@@ -131,7 +158,7 @@ export function ExamesContent() {
                 />
                 <button
                   onClick={() => onClickSearchExame(searchExame)}
-                  className="py-2 px-4 flex items-center  shadow-sm gap-2  mt-auto font-roboto bg-mascots-primary-500 rounded-xl text-white hover:bg-mascots-primary-800 active:bg-mascots-primary-500 transition-all"
+                  className="py-2 px-4 flex items-center shadow-sm gap-2 mt-auto font-roboto bg-mascots-primary-500 rounded-xl text-white hover:bg-mascots-primary-800 active:bg-mascots-primary-500 transition-all"
                 >
                   <FaSearch
                     height={20}
@@ -152,6 +179,39 @@ export function ExamesContent() {
                   <span className="text-nowrap">Mostrar Todos os Exames</span>
                 </button>
               </div>
+              <div className="flex bg-mascots-primary-600 rounded-md overflow-y-scroll p-4 gap-6 w-full flex-wrap max-h-96">
+                {activeSearch.trim() === ""
+                  ? examesArray
+                      .reverse()
+                      .map((exames) => (
+                        <ExameCard
+                          onclick={() => handlePetCardClick(exames)}
+                          key={exames.id}
+                          petName={exames.petName}
+                          dataExame={exames.data}
+                          tutorName={exames.tutorCpf}
+                          typeExame={exames.tipo}
+                          veterinarianName={exames.veterinario.name}
+                        />
+                      ))
+                  : arrayFilter
+                      .reverse()
+                      .map((exames) => (
+                        <ExameCard
+                          onclick={() => handlePetCardClick(exames)}
+                          key={exames.id}
+                          petName={exames.petName}
+                          dataExame={exames.data}
+                          tutorName={exames.tutorCpf}
+                          typeExame={exames.tipo}
+                          veterinarianName={exames.veterinario.name}
+                        />
+                      ))}
+              </div>
+              <ExamesInfo
+                bottomDivRef={bottomDivRef}
+                exameSelect={exameSelect}
+              />
             </div>
           </div>
         </MainContent>
@@ -160,7 +220,10 @@ export function ExamesContent() {
             <h1 className="text-2xl w-fit border-b-2 pb-1 border-b-mascots-primary-700">
               Prescrever Exame
             </h1>
-            <ExamesForms />
+            <ExamesForms
+              examesArray={examesArray}
+              setExamesArray={setExamesArray}
+            />
           </div>
         </MainContent>
       </div>

@@ -24,31 +24,38 @@ interface Pet {
   tutor: Tutor;
 }
 
+interface Veterinario {
+  name: string;
+  crv: string;
+  id: string; // Veterinário agora tem o campo 'id' como requerido
+}
+
 interface Exame {
+  id: string; // Adicionado id único para Exame
   veterinario: Veterinario;
   tipo: string;
   detalhe: string;
   tutorCpf: string;
   petName: string | undefined;
+  petId: string;
+  data: string;
 }
 
-interface Veterinario {
-  name: string;
-  crv: string;
-  id: string;
+interface ExamesFormsProps {
+  examesArray: Exame[];
+  setExamesArray: React.Dispatch<React.SetStateAction<Exame[]>>;
 }
 
-export function ExamesForms() {
+export function ExamesForms({ examesArray, setExamesArray }: ExamesFormsProps) {
   const [exame, setExame] = useState<Exame>({
-    veterinario: {
-      name: "",
-      crv: "",
-      id: "",
-    },
+    id: uuidv4(), // Inicializando com um id único
+    veterinario: { name: "", crv: "", id: "" },
     tipo: "",
+    petId: "",
     detalhe: "",
     petName: "",
     tutorCpf: "",
+    data: "", // Inicializa data vazia
   });
 
   useEffect(() => {
@@ -74,12 +81,8 @@ export function ExamesForms() {
     }
   }, []);
 
-  const [examesArray, setExamesArray] = useState<Exame[]>(() => {
-    const saveExames = localStorage.getItem("examesArray");
-    return saveExames ? JSON.parse(saveExames) : [];
-  });
-
   useEffect(() => {
+    console.log("Salvando examesArray:", examesArray); // Verifique se o array está correto antes de salvar
     localStorage.setItem("examesArray", JSON.stringify(examesArray));
   }, [examesArray]);
 
@@ -104,7 +107,13 @@ export function ExamesForms() {
   }
 
   function handleSelectPet(e: ChangeEvent<HTMLSelectElement>) {
-    setExame({ ...exame, petName: e.target.value });
+    const selectedPetId = petsArray.find((pet) => pet.id === e.target.value);
+
+    setExame({
+      ...exame,
+      petName: selectedPetId ? selectedPetId.name : "",
+      petId: selectedPetId ? selectedPetId.id : "",
+    });
   }
 
   function handleExameTypeChange(e: ChangeEvent<HTMLSelectElement>) {
@@ -112,19 +121,25 @@ export function ExamesForms() {
   }
 
   function handleAddExame() {
-    const newExame = { ...exame, id: uuidv4() };
-    console.log(newExame);
-    setExamesArray((prevExames) => [...prevExames, newExame]);
+    const currentDate = new Date().toISOString().split("T")[0];
+    const newExame = { ...exame, id: uuidv4(), data: currentDate };
+    console.log("Novo exame sendo adicionado:", newExame); // Verifique se o novo exame está sendo criado corretamente
+
+    setExamesArray((prevExames) => {
+      const updatedExames = [...prevExames, newExame];
+      console.log("Exames atualizados:", updatedExames); // Verifique o array de exames após a adição
+      return updatedExames;
+    });
+
     setExame({
+      id: uuidv4(),
+      veterinario: { name: "", crv: "", id: "" },
+      tipo: "",
+      petId: "",
       detalhe: "",
       petName: "",
-      tipo: "",
       tutorCpf: "",
-      veterinario: {
-        crv: "",
-        id: "",
-        name: "",
-      },
+      data: "",
     });
   }
 

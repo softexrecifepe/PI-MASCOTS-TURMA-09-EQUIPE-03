@@ -14,6 +14,7 @@ interface Veterinario {
 }
 
 interface Exame {
+  petId: string;
   veterinario: Veterinario;
   tipo: string;
   detalhe: string;
@@ -36,7 +37,7 @@ interface SelectPetProps {
   exame: Exame;
   handleSelectPet: ReactEventHandler<HTMLSelectElement>;
   label?: string;
-  petFiltrado: Omit<Pet, "id">[];
+  petFiltrado: Pet[];
 }
 
 export function SelectPet({
@@ -48,17 +49,14 @@ export function SelectPet({
   return (
     <div className="flex flex-col gap-2 w-full">
       <label className="font-medium pl-1 text-gray-700">{label}</label>
-
       <select
-        value={exame.petName}
+        value={exame.petId} // Usando petId para manter o valor selecionado
         onChange={handleSelectPet}
-        className="w-full text-gray-500 p-2 border font-jetbrains font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-mascots-primary-500 font-jebrains transition-all"
+        className="w-full text-gray-500 p-2 border rounded-md focus:outline-none"
       >
-        <option value="selecione">Selecione o Pet</option>
+        <option value="">Selecione o Pet</option>
         {petFiltrado.map((pet) => (
-          <option key={pet.name} value={pet.name}>
-            {" "}
-            {/* Corrigido para pet.name */}
+          <option key={pet.id} value={pet.id}>
             {pet.name}
           </option>
         ))}

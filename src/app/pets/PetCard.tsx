@@ -80,7 +80,7 @@ export function PetCard({
             <span
               className={`${gender === "Fêmea" ? "flex text-gray-800 items-center gap-1" : "hidden"}`}
             >
-              <CgGenderFemale size={20} color="pink" />
+              <CgGenderFemale size={20} color="red" />
               {gender}
             </span>
           </div>
