@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { FaPaw } from "react-icons/fa";
-import { AiFillHome } from "react-icons/ai";
+import { FaUserDoctor } from "react-icons/fa6";
 import { FaHeartbeat } from "react-icons/fa";
 import { MdAssignment } from "react-icons/md";
 import { FiActivity, FiBox } from "react-icons/fi";
@@ -63,7 +63,7 @@ export function HeaderPage({
                 href="/consultas"
                 className={`${consutas ? "flex bg-mascots-primary-800 text-white items-center space-x-2 hover:bg-white hover:text-black p-2 rounded w-full text-left transition-colors duration-100" : "flex bg-transparent text-white items-center space-x-2 hover:bg-white hover:text-black p-2 rounded w-full text-left transition-colors duration-100"}`}
               >
-                <FaHeartbeat
+                <FaUserDoctor
                   size={24}
                   className="transition-colors duration-200"
                 />

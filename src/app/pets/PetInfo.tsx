@@ -38,7 +38,7 @@ interface PetInfoProps {
 
 export function PetInfo({ petSelect, bottomDivRef }: PetInfoProps) {
   return (
-    <div className="mt-10">
+    <div className=" w-full">
       {/* Caso nenhum pet esteja selecionado */}
       <div
         className={`${!petSelect ? "bg-gray-100 border border-gray-300 rounded-lg py-8 px-6 shadow-md" : "hidden"}`}
@@ -166,7 +166,9 @@ export function PetInfo({ petSelect, bottomDivRef }: PetInfoProps) {
               </p>
             </div>
             <div className="p-4 bg-white rounded-md shadow-sm border border-gray-200">
-              <p className="  font-medium text-gray-500">Endereço:</p>
+              <p className="  font-medium text-gray-500">
+                Endereço (CEP númeroº):
+              </p>
               <p className="text-lg font-jetbrains text-gray-800 font-semibold">
                 {petSelect?.tutor.address}
               </p>

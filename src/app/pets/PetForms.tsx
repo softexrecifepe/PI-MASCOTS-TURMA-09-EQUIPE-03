@@ -37,21 +37,22 @@ interface PetFormsProps {
 export function PetForms({ setPetsArray }: PetFormsProps) {
   const [pet, setPet] = useState<Omit<Pet, "id">>({
     // Remove o campo id ao definir o estado inicial de pet
-    name: "Marley",
-    age: "12",
-    gender: "macho",
-    species: "cachorro",
-    breed: "labrador",
-    condition: "nenhuma",
+    name: "",
+    age: "",
+    gender: "",
+    species: "",
+    breed: "",
+    condition: "",
     tutor: {
-      name: "arthur",
-      phone: "981273812",
-      cpf: "81729831",
-      address: "6817263782",
+      name: "",
+      phone: "",
+      cpf: "",
+      address: "",
     },
   });
   function handleAddPet() {
     const newPet = { ...pet, id: uuidv4() };
+
     setPetsArray((prevPetsArray) => [...prevPetsArray, newPet]);
     setPet({
       name: "",
@@ -177,7 +178,8 @@ export function PetForms({ setPetsArray }: PetFormsProps) {
             value={pet.tutor.address}
             id="addressTutor"
             type="text"
-            placeholder="ex: Cidade, Bairro, Rua nº"
+            maxLenght={11}
+            placeholder="ex: Cep nº"
             label="Endereço"
           />
         </div>
@@ -197,9 +199,9 @@ export function PetForms({ setPetsArray }: PetFormsProps) {
             onchange={handlePetAgeChange}
             value={pet.age}
             id="agePet"
+            label="Idade do pet"
             maxLenght={2}
             type="text"
-            label="Idade do pet"
             placeholder="ex: 12"
           />
           <Selection

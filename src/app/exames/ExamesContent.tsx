@@ -4,6 +4,7 @@ import { FaClipboardList } from "react-icons/fa";
 import { MainContent } from "../components/MainContent";
 import { useState } from "react";
 import { MdAssignmentAdd } from "react-icons/md";
+import { ExamesForms } from "./ExamesForms";
 
 export function ExamesContent() {
   const [visualizarExames, setVisualizarExames] = useState(true);
@@ -39,7 +40,12 @@ export function ExamesContent() {
           <h1>Visualizar Exames</h1>
         </MainContent>
         <MainContent zIndex="z-10" visualize={marcarExame}>
-          <h1>Marcar Exames</h1>
+          <div className="flex flex-col gap-10">
+            <h1 className="text-2xl w-fit border-b-2 pb-1 border-b-mascots-primary-700">
+              Prescrever Exame
+            </h1>
+            <ExamesForms />
+          </div>
         </MainContent>
       </div>
     </main>
