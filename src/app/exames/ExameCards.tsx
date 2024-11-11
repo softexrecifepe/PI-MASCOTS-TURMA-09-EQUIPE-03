@@ -32,7 +32,7 @@ export function ExameCard({
     <>
       <div
         onClick={onclick}
-        className=" bg-mascots-primary-700 active:scale-95 cursor-pointer hover:scale-105 transition-all text-gray-800 flex justify-between h-fit flex-col w-cards-pets rounded-lg overflow-hidden shadow-md"
+        className=" bg-exames-color-800 active:scale-95 cursor-pointer hover:scale-105 transition-all text-gray-800 flex justify-between h-fit flex-col w-cards-pets rounded-lg overflow-hidden shadow-md"
       >
         <div className="text-white flex items-center gap-3 px-3 py-4">
           <FaClipboardList size={24} />

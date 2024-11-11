@@ -1,5 +1,5 @@
 "use client";
-import { Aside2Nav } from "../components/Aside2Nav";
+import { AsideExames } from "./AsideExames";
 import { FaClipboardList, FaSearch, FaTable } from "react-icons/fa";
 import { MainContent } from "../components/MainContent";
 import { useEffect, useRef, useState, type ChangeEvent } from "react";
@@ -116,7 +116,7 @@ export function ExamesContent() {
 
   return (
     <main className="flex px-4 py-4 gap-2 h-dvh">
-      <Aside2Nav
+      <AsideExames
         icon1={<FaClipboardList size={24} />}
         text1="Visualizar Exames"
         onClick1={handleVisualizarExames}
@@ -131,7 +131,7 @@ export function ExamesContent() {
         <MainContent zIndex="z-40" visualize={visualizarExames}>
           <div className="flex flex-col gap-14">
             <div className="flex flex-col gap-4">
-              <div className="flex items-center gap-1 border-b-2 pb-1 w-fit border-b-mascots-primary-700">
+              <div className="flex items-center gap-1 border-b-2 pb-1 w-fit border-b-exames-color-700">
                 <Image
                   alt="prancheta"
                   unoptimized
@@ -139,7 +139,7 @@ export function ExamesContent() {
                   width={32}
                   height={32}
                 />
-                <h1 className="text-2xl">Exames</h1>
+                <h1 className="text-2xl font-jetbrains">Exames</h1>
               </div>
               <p className="text-gray-700 font-jetbrains">
                 Clique nos cartões para mais informações
@@ -158,28 +158,20 @@ export function ExamesContent() {
                 />
                 <button
                   onClick={() => onClickSearchExame(searchExame)}
-                  className="py-2 px-4 flex items-center shadow-sm gap-2 mt-auto font-roboto bg-mascots-primary-500 rounded-xl text-white hover:bg-mascots-primary-800 active:bg-mascots-primary-500 transition-all"
+                  className="py-2 px-4 flex items-center shadow-sm gap-2 mt-auto font-roboto bg-exames-color-600 rounded-xl text-white hover:bg-exames-color-800 active:bg-exames-color-500 transition-all"
                 >
-                  <FaSearch
-                    height={20}
-                    width={20}
-                    className="text-mascots-primary-700"
-                  />
+                  <FaSearch height={20} width={20} className="text-white" />
                   <span className="text-nowrap">Pesquisar Exame</span>
                 </button>
                 <button
                   onClick={onClickCleanSearchExame}
-                  className="py-2 px-4 flex items-center shadow-sm gap-2 mt-auto font-roboto bg-mascots-primary-500 rounded-xl text-white hover:bg-mascots-primary-800 active:bg-mascots-primary-500 transition-all"
+                  className="py-2 px-4 flex items-center shadow-sm gap-2 mt-auto font-roboto bg-exames-color-600 rounded-xl text-white hover:bg-exames-color-800 active:bg-exames-color-500 transition-all"
                 >
-                  <FaTable
-                    height={20}
-                    width={20}
-                    className="text-mascots-primary-700"
-                  />
+                  <FaTable height={20} width={20} className="text-white" />
                   <span className="text-nowrap">Mostrar Todos os Exames</span>
                 </button>
               </div>
-              <div className="flex bg-mascots-primary-600 rounded-md overflow-y-scroll p-4 gap-6 w-full flex-wrap max-h-96">
+              <div className="flex bg-exames-color-600 rounded-md overflow-y-scroll p-4 gap-6 w-full flex-wrap max-h-96">
                 {activeSearch.trim() === ""
                   ? examesArray
                       .reverse()
@@ -217,7 +209,7 @@ export function ExamesContent() {
         </MainContent>
         <MainContent zIndex="z-10" visualize={marcarExame}>
           <div className="flex flex-col gap-10">
-            <h1 className="text-2xl w-fit border-b-2 pb-1 border-b-mascots-primary-700">
+            <h1 className="text-2xl font-jetbrains w-fit border-b-2 pb-1 border-b-exames-color-700">
               Prescrever Exame
             </h1>
             <ExamesForms

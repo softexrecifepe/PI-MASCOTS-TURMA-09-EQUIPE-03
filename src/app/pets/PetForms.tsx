@@ -8,7 +8,7 @@ import {
 } from "react";
 
 import { Selection } from "../components/Selection";
-import { FormsButtom } from "../components/FormsButton";
+import { FormsButtom } from "./FormsButtom";
 import { v4 as uuidv4 } from "uuid";
 import { InputComponent } from "../components/InputComponent";
 
@@ -143,7 +143,7 @@ export function PetForms({ setPetsArray }: PetFormsProps) {
       }}
     >
       <div className="flex flex-col gap-7">
-        <h1 className="text-2xl text-mascots-primary-800">Tutor</h1>
+        <h1 className="text-2xl text-pets-color-800">Tutor</h1>
         <div className="flex gap-6">
           <InputComponent
             onchange={handleTutorNameChange}
@@ -185,7 +185,7 @@ export function PetForms({ setPetsArray }: PetFormsProps) {
         </div>
       </div>
       <div className="flex flex-col gap-7">
-        <h1 className="text-2xl text-mascots-primary-800">Pet</h1>
+        <h1 className="text-2xl text-pets-color-800">Pet</h1>
         <div className="flex gap-6">
           <InputComponent
             onchange={handlePetNameChange}

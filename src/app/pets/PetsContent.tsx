@@ -1,6 +1,6 @@
 "use client";
 
-import { Aside2Nav } from "../components/Aside2Nav";
+import { AsidePets } from "./AsidePets";
 import { MainContent } from "../components/MainContent";
 import { useEffect, useRef, useState, type ChangeEvent } from "react";
 import { MdAddBox, MdOutlinePets } from "react-icons/md";
@@ -96,7 +96,7 @@ export function PetsContent() {
 
   return (
     <main className="flex px-4 py-4 gap-2 min-h-screen">
-      <Aside2Nav
+      <AsidePets
         icon1={<MdOutlinePets size={24} />}
         text1="Visualizar Pets"
         onClick1={handleVisualizarPets}
@@ -112,7 +112,7 @@ export function PetsContent() {
         <MainContent zIndex="z-40" visualize={visualizarPets}>
           <div className="flex flex-col gap-14">
             <div className="flex flex-col gap-4">
-              <div className="flex items-center gap-2 border-b-2 pb-1  w-fit  border-b-mascots-primary-700">
+              <div className="flex items-center gap-2 border-b-2 pb-1  w-fit  border-b-pets-color-700">
                 <Image
                   src={pata}
                   alt="PetIcon"
@@ -120,7 +120,7 @@ export function PetsContent() {
                   width={40}
                   height={40}
                 />
-                <h1 className="text-2xl">Pets</h1>
+                <h1 className="text-2xl font-jetbrains">Pets</h1>
               </div>
               <p className="text-gray-700 font-jetbrains">
                 Clique nos cartões para mais informações
@@ -140,29 +140,21 @@ export function PetsContent() {
                 />
                 <button
                   onClick={() => onClickSearchPet(searchPet)}
-                  className="py-2 px-4 flex items-center  shadow-sm gap-2 w-fit mt-auto font-roboto bg-mascots-primary-500 rounded-xl text-white hover:bg-mascots-primary-800 active:bg-mascots-primary-500 transition-all"
+                  className="py-2 px-4 flex items-center  shadow-sm gap-2 w-fit mt-auto font-roboto bg-pets-color-600 rounded-xl text-white  hover:bg-pets-color-800 active:bg-pets-color-500 transition-all"
                 >
-                  <FaSearch
-                    height={20}
-                    width={20}
-                    className="text-mascots-primary-700"
-                  />
+                  <FaSearch height={20} width={20} className="text-white" />
                   <span>Pesquisar</span>
                 </button>
                 <button
                   onClick={onClickCleanSearchPet}
-                  className="py-2 px-4 flex items-center shadow-sm gap-2 mt-auto font-roboto bg-mascots-primary-500 rounded-xl text-white hover:bg-mascots-primary-800 active:bg-mascots-primary-500 transition-all"
+                  className="py-2 px-4 flex items-center shadow-sm gap-2 mt-auto font-roboto bg-pets-color-600 rounded-xl text-white hover:bg-pets-color-800 active:bg-pets-color-500 transition-all"
                 >
-                  <FaTable
-                    height={20}
-                    width={20}
-                    className="text-mascots-primary-700"
-                  />
+                  <FaTable height={20} width={20} className="text-white" />
                   <span className="text-nowrap">Mostrar Todos</span>
                 </button>
               </div>
 
-              <div className="flex bg-mascots-primary-600 rounded-md overflow-y-scroll p-4 gap-6 w-full flex-wrap max-h-96">
+              <div className="flex bg-pets-color-600 rounded-md overflow-y-scroll p-4 gap-6 w-full flex-wrap max-h-96">
                 {activeSearch.trim() === ""
                   ? [...petsArray]
                       .reverse()
@@ -199,7 +191,7 @@ export function PetsContent() {
         </MainContent>
         <MainContent zIndex="z-10" visualize={cadastrarPet}>
           <div className="flex flex-col gap-10">
-            <h1 className="text-2xl w-fit border-b-2 pb-1 border-b-mascots-primary-700">
+            <h1 className="text-2xl w-fit border-b-2 pb-1 font-jetbrains border-b-pets-color-700">
               Cadastrar Pet
             </h1>
             <PetForms setPetsArray={setPetsArray} />

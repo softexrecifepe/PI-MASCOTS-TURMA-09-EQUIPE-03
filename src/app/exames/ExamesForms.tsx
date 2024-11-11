@@ -163,9 +163,7 @@ export function ExamesForms({ examesArray, setExamesArray }: ExamesFormsProps) {
       className="flex flex-col gap-10"
     >
       <div className="flex flex-col gap-7">
-        <h1 className="text-2xl text-mascots-primary-800">
-          Médico Veterinário
-        </h1>
+        <h1 className="text-2xl text-exames-color-800">Médico Veterinário</h1>
         <div className="flex gap-6">
           <SelectVeterinario
             label="Selecione o Médico Veterinário"
@@ -189,7 +187,7 @@ export function ExamesForms({ examesArray, setExamesArray }: ExamesFormsProps) {
         </div>
       </div>
       <div className="flex flex-col gap-7">
-        <h1 className="text-2xl text-mascots-primary-800">Exame</h1>
+        <h1 className="text-2xl text-exames-color-800">Exame</h1>
         <div className="flex flex-col gap-6">
           <div className="flex gap-6">
             <SelectExamType
@@ -224,7 +222,7 @@ export function ExamesForms({ examesArray, setExamesArray }: ExamesFormsProps) {
         <button
           type="submit"
           onClick={handleAddExame}
-          className="bg-mascots-primary-700 flex justify-center gap-2 text-white w-fit px-6 py-4 rounded-lg hover:bg-mascots-primary-900 hover:scale-105 transition-all active:bg-mascots-primary-600 active:text-black"
+          className="bg-exames-color-700 flex justify-center gap-2 text-white w-fit px-6 py-4 rounded-lg hover:bg-exames-color-900 hover:scale-105 transition-all active:bg-exames-color-600 active:text-black"
         >
           Prescrever Exame
         </button>

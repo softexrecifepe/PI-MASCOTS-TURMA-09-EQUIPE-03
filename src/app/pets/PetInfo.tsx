@@ -44,13 +44,7 @@ export function PetInfo({ petSelect, bottomDivRef }: PetInfoProps) {
         className={`${!petSelect ? "bg-gray-100 border border-gray-300 rounded-lg py-8 px-6 shadow-md" : "hidden"}`}
       >
         <div className="flex flex-col items-center gap-3">
-          <Image
-            src={lupaPet}
-            alt="LupaPet"
-            unoptimized
-            width={64}
-            height={64}
-          />
+          <Image src={lupaPet} alt="LupaPet" width={64} height={64} />
           <span className="text-gray-500 font-semibold font-jetbrains text-center">
             Selecione o Pet para obter informações
           </span>
@@ -66,25 +60,12 @@ export function PetInfo({ petSelect, bottomDivRef }: PetInfoProps) {
           <div
             className={`${petSelect?.species === "Cachorro" ? "rounded-full mt-5 bg-mascots-primary-700 p-3" : "hidden"}`}
           >
-            <Image
-              alt="DogProfile"
-              unoptimized
-              src={dogProfile}
-              width={100}
-              height={100}
-            />
+            <Image alt="DogProfile" src={dogProfile} width={100} height={100} />
           </div>
-
           <div
             className={`${petSelect?.species === "Gato" ? "rounded-full mt-5 bg-mascots-primary-700 p-3" : "hidden"}`}
           >
-            <Image
-              alt="catProfile"
-              unoptimized
-              src={catProfile}
-              width={100}
-              height={100}
-            />
+            <Image alt="catProfile" src={catProfile} width={100} height={100} />
           </div>
 
           <div className="grid grid-cols-3 gap-6 w-full text-lg font-jetbrains">
@@ -196,7 +177,6 @@ export function PetInfo({ petSelect, bottomDivRef }: PetInfoProps) {
           {petSelect?.species === "Cachorro" ? (
             <>
               <Image
-                unoptimized
                 src={pataBgDog}
                 alt="pata"
                 className=" absolute bottom-0 right-10"
@@ -207,7 +187,6 @@ export function PetInfo({ petSelect, bottomDivRef }: PetInfoProps) {
           ) : (
             <>
               <Image
-                unoptimized
                 src={pataBgGato}
                 alt="pata"
                 className=" absolute bottom-0 right-10"
