@@ -41,6 +41,7 @@ const config: Config = {
         "mascots-secundary": {
           "50": "#f8f8f8",
         },
+
         //600 default
         "pets-color": {
           "50": "#fff7ed",
