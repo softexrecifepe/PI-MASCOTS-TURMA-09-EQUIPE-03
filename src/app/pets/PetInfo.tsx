@@ -61,12 +61,24 @@ export function PetInfo({ petSelect, bottomDivRef }: PetInfoProps) {
           <div
             className={`${petSelect?.species === "Cachorro" ? "rounded-full mt-5 bg-pets-color-700 p-3" : "hidden"}`}
           >
-            <Image alt="DogProfile" src={dogProfile} width={100} height={100} />
+            <Image
+              unoptimized
+              alt="DogProfile"
+              src={dogProfile}
+              width={100}
+              height={100}
+            />
           </div>
           <div
             className={`${petSelect?.species === "Gato" ? "rounded-full mt-5 bg-pets-color-700 p-3" : "hidden"}`}
           >
-            <Image alt="catProfile" src={catProfile} width={100} height={100} />
+            <Image
+              unoptimized
+              alt="catProfile"
+              src={catProfile}
+              width={100}
+              height={100}
+            />
           </div>
 
           <div className="grid grid-cols-3 gap-6 w-full text-lg font-jetbrains">
@@ -178,6 +190,7 @@ export function PetInfo({ petSelect, bottomDivRef }: PetInfoProps) {
           {petSelect?.species === "Cachorro" ? (
             <>
               <Image
+                unoptimized
                 src={pataBgDog}
                 alt="pata"
                 className=" absolute bottom-0 right-10"
@@ -188,6 +201,7 @@ export function PetInfo({ petSelect, bottomDivRef }: PetInfoProps) {
           ) : (
             <>
               <Image
+                unoptimized
                 src={pataBgGato}
                 alt="pata"
                 className=" absolute bottom-0 right-10"

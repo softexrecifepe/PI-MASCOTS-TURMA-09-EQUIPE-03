@@ -49,6 +49,7 @@ interface ExamesFormsProps {
 }
 
 export function ExamesForms({ examesArray, setExamesArray }: ExamesFormsProps) {
+  // localStorage.clear();
   const [exame, setExame] = useState<Exame>({
     id: uuidv4(), // Inicializando com um id único
     veterinario: { name: "", crv: "", id: "" },
@@ -123,8 +124,9 @@ export function ExamesForms({ examesArray, setExamesArray }: ExamesFormsProps) {
   }
 
   function handleAddExame() {
-    const currentDate = new Date().toISOString().split("T")[0];
-    const newExame = { ...exame, id: uuidv4(), data: currentDate };
+    const currentDate = new Date();
+    const formattedDate = `${currentDate.getDate().toString().padStart(2, "0")}/${(currentDate.getMonth() + 1).toString().padStart(2, "0")}/${currentDate.getFullYear()}`;
+    const newExame = { ...exame, id: uuidv4(), data: formattedDate };
     console.log("Novo exame sendo adicionado:", newExame); // Verifique se o novo exame está sendo criado corretamente
 
     setExamesArray((prevExames) => {
@@ -133,16 +135,20 @@ export function ExamesForms({ examesArray, setExamesArray }: ExamesFormsProps) {
       return updatedExames;
     });
 
-    setExame({
+    setExame((prevExame) => ({
       id: uuidv4(),
-      veterinario: { name: "", crv: "", id: "" },
+      veterinario: {
+        name: prevExame.veterinario.name,
+        crv: prevExame.veterinario.crv,
+        id: prevExame.veterinario.id,
+      },
       tipo: "",
       petId: "",
       detalhe: "",
       petName: "",
       tutorCpf: "",
       data: "",
-    });
+    }));
   }
 
   function handleTutorCpfSearch(e: ChangeEvent<HTMLInputElement>) {

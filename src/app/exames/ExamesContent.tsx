@@ -192,7 +192,7 @@ export function ExamesContent() {
                           veterinarianName={exames.veterinario.name}
                         />
                       ))
-                  : arrayFilter
+                  : [...arrayFilter]
                       .reverse()
                       .map((exames) => (
                         <ExameCard
