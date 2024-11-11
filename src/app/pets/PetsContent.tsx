@@ -117,8 +117,8 @@ export function PetsContent() {
                   src={pata}
                   alt="PetIcon"
                   unoptimized
-                  width={40}
-                  height={40}
+                  width={50}
+                  height={50}
                 />
                 <h1 className="text-2xl font-jetbrains">Pets</h1>
               </div>
@@ -128,33 +128,38 @@ export function PetsContent() {
             </div>
 
             <div className="flex flex-col gap-10">
-              <div className="w-2/3 flex items-center justify-center gap-5">
-                <InputComponent
-                  id="search"
-                  type="text"
-                  onchange={handleSearchPet}
-                  value={searchPet}
-                  maxLenght={11}
-                  label="Buscar Pets"
-                  placeholder="Digite o CPF do Tutor"
-                />
-                <button
-                  onClick={() => onClickSearchPet(searchPet)}
-                  className="py-2 px-4 flex items-center  shadow-sm gap-2 w-fit mt-auto font-roboto bg-pets-color-600 rounded-xl text-white  hover:bg-pets-color-800 active:bg-pets-color-500 transition-all"
-                >
-                  <FaSearch height={20} width={20} className="text-white" />
-                  <span>Pesquisar</span>
-                </button>
-                <button
-                  onClick={onClickCleanSearchPet}
-                  className="py-2 px-4 flex items-center shadow-sm gap-2 mt-auto font-roboto bg-pets-color-600 rounded-xl text-white hover:bg-pets-color-800 active:bg-pets-color-500 transition-all"
-                >
-                  <FaTable height={20} width={20} className="text-white" />
-                  <span className="text-nowrap">Mostrar Todos</span>
-                </button>
+              <div className="w-full flex items-end justify-start gap-5">
+                <div className="w-1/3">
+                  <InputComponent
+                    id="search"
+                    type="text"
+                    onchange={handleSearchPet}
+                    value={searchPet}
+                    maxLenght={11}
+                    label="Buscar Pets"
+                    placeholder="Digite o CPF do Tutor"
+                  />
+                </div>
+
+                <div className="flex gap-4">
+                  <button
+                    onClick={() => onClickSearchPet(searchPet)}
+                    className="py-2 px-4 flex items-center  shadow-sm gap-2 w-fit mt-auto font-roboto bg-pets-color-600 rounded-xl text-white  hover:bg-pets-color-800 active:bg-pets-color-500 transition-all"
+                  >
+                    <FaSearch height={20} width={20} className="text-white" />
+                    <span>Pesquisar Pets</span>
+                  </button>
+                  <button
+                    onClick={onClickCleanSearchPet}
+                    className="py-2 px-4 flex items-center shadow-sm gap-2 mt-auto font-roboto bg-pets-color-600 rounded-xl text-white hover:bg-pets-color-800 active:bg-pets-color-500 transition-all"
+                  >
+                    <FaTable height={20} width={20} className="text-white" />
+                    <span className="text-nowrap">Mostrar Todos os Pets</span>
+                  </button>
+                </div>
               </div>
 
-              <div className="flex bg-pets-color-600 rounded-md overflow-y-scroll p-4 gap-6 w-full flex-wrap max-h-96">
+              <div className="flex bg-pets-color-300 rounded-md overflow-y-scroll p-4 gap-6 w-full flex-wrap max-h-96">
                 {activeSearch.trim() === ""
                   ? [...petsArray]
                       .reverse()

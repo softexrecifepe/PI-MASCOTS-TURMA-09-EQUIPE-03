@@ -33,7 +33,7 @@ export function PetCard({
     <>
       <div
         onClick={onclick}
-        className=" bg-pets-color-800 active:scale-95 cursor-pointer hover:scale-105 transition-all text-gray-800 flex justify-between h-fit flex-col w-cards-pets rounded-lg overflow-hidden shadow-md"
+        className=" bg-pets-color-600 active:scale-95 cursor-pointer hover:scale-105 transition-all text-gray-800 flex justify-between h-fit flex-col w-cards-pets rounded-lg overflow-hidden shadow-md"
       >
         <div
           className={`${specie === "Gato" ? "text-white flex items-center gap-3 px-3 py-4" : "hidden"}`}

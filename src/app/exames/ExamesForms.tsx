@@ -5,6 +5,8 @@ import { v4 as uuidv4 } from "uuid";
 import { SelectExamType } from "./SelectExamType";
 import { SelectPet } from "./SelectPet";
 import { TextArea } from "./TextArea";
+import { IoMdAddCircle } from "react-icons/io";
+import { FaClipboard } from "react-icons/fa";
 
 interface Tutor {
   name: string;
@@ -224,6 +226,7 @@ export function ExamesForms({ examesArray, setExamesArray }: ExamesFormsProps) {
           onClick={handleAddExame}
           className="bg-exames-color-700 flex justify-center gap-2 text-white w-fit px-6 py-4 rounded-lg hover:bg-exames-color-900 hover:scale-105 transition-all active:bg-exames-color-600 active:text-black"
         >
+          <FaClipboard size={24} />
           Prescrever Exame
         </button>
       </div>

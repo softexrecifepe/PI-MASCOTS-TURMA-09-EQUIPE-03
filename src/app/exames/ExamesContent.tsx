@@ -46,6 +46,7 @@ interface Veterinario {
   crv: string;
   id: string;
 }
+
 export function ExamesContent() {
   const [visualizarExames, setVisualizarExames] = useState(true);
   const [marcarExame, setMarcarExame] = useState(false);
@@ -136,8 +137,8 @@ export function ExamesContent() {
                   alt="prancheta"
                   unoptimized
                   src={prancheta}
-                  width={32}
-                  height={32}
+                  width={50}
+                  height={50}
                 />
                 <h1 className="text-2xl font-jetbrains">Exames</h1>
               </div>
@@ -146,34 +147,39 @@ export function ExamesContent() {
               </p>
             </div>
             <div className="flex flex-col gap-10">
-              <div className="w-2/3 flex items-center justify-center gap-5">
-                <InputComponent
-                  id="search"
-                  type="text"
-                  onchange={handleSearchExame}
-                  value={searchExame}
-                  maxLenght={11}
-                  label="Buscar Exames"
-                  placeholder="Digite o CPF do Tutor"
-                />
-                <button
-                  onClick={() => onClickSearchExame(searchExame)}
-                  className="py-2 px-4 flex items-center shadow-sm gap-2 mt-auto font-roboto bg-exames-color-600 rounded-xl text-white hover:bg-exames-color-800 active:bg-exames-color-500 transition-all"
-                >
-                  <FaSearch height={20} width={20} className="text-white" />
-                  <span className="text-nowrap">Pesquisar Exame</span>
-                </button>
-                <button
-                  onClick={onClickCleanSearchExame}
-                  className="py-2 px-4 flex items-center shadow-sm gap-2 mt-auto font-roboto bg-exames-color-600 rounded-xl text-white hover:bg-exames-color-800 active:bg-exames-color-500 transition-all"
-                >
-                  <FaTable height={20} width={20} className="text-white" />
-                  <span className="text-nowrap">Mostrar Todos os Exames</span>
-                </button>
+              <div className="w-full flex items-end justify-start gap-5">
+                <div className="w-1/3">
+                  <InputComponent
+                    id="search"
+                    type="text"
+                    onchange={handleSearchExame}
+                    value={searchExame}
+                    maxLenght={11}
+                    label="Buscar Exames"
+                    placeholder="Digite o CPF do Tutor"
+                  />
+                </div>
+
+                <div className="flex gap-4">
+                  <button
+                    onClick={() => onClickSearchExame(searchExame)}
+                    className="py-2 px-4 flex items-center shadow-sm gap-2 mt-auto font-roboto bg-exames-color-600 rounded-xl text-white hover:bg-exames-color-800 active:bg-exames-color-500 transition-all"
+                  >
+                    <FaSearch height={20} width={20} className="text-white" />
+                    <span className="text-nowrap">Pesquisar Exame</span>
+                  </button>
+                  <button
+                    onClick={onClickCleanSearchExame}
+                    className="py-2 px-4 flex items-center shadow-sm gap-2 mt-auto font-roboto bg-exames-color-600 rounded-xl text-white hover:bg-exames-color-800 active:bg-exames-color-500 transition-all"
+                  >
+                    <FaTable height={20} width={20} className="text-white" />
+                    <span className="text-nowrap">Mostrar Todos os Exames</span>
+                  </button>
+                </div>
               </div>
               <div className="flex bg-exames-color-600 rounded-md overflow-y-scroll p-4 gap-6 w-full flex-wrap max-h-96">
                 {activeSearch.trim() === ""
-                  ? examesArray
+                  ? [...examesArray]
                       .reverse()
                       .map((exames) => (
                         <ExameCard

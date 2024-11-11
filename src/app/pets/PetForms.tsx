@@ -157,7 +157,7 @@ export function PetForms({ setPetsArray }: PetFormsProps) {
             onchange={handleTutorPhoneChange}
             value={pet.tutor.phone}
             id="phoneTutor"
-            maxLenght={10}
+            maxLenght={11}
             type="text"
             placeholder="ex: (81)12345678"
             label="Contato"

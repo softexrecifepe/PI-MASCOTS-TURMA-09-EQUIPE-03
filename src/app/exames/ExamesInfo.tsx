@@ -51,10 +51,10 @@ export function ExamesInfo({ exameSelect, bottomDivRef }: ExamesInfoProps) {
       {/* Caso um exame esteja selecionado */}
       <div
         ref={bottomDivRef}
-        className={`${exameSelect ? "bg-mascots-primary-600 p-6 flex flex-col gap-4 rounded-lg shadow-lg" : "hidden"}`}
+        className={`${exameSelect ? "bg-exames-color-600 p-6 flex flex-col gap-4 rounded-lg shadow-lg" : "hidden"}`}
       >
         <div className="flex gap-6 items-start shadow-md object-cover rounded-lg px-4 py-5 bg-gray-100">
-          <div className="rounded-full mt-5 bg-mascots-primary-700 p-5">
+          <div className="rounded-full mt-5 bg-exames-color-700 p-5">
             <Image
               alt="examesImage"
               src={exames}

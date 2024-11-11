@@ -9,6 +9,7 @@ import pataBgDog from "../assets/images/pataBgDog.png";
 import pataBgGato from "../assets/images/pataBgGato.png";
 import dogProfile from "../assets/images/dogProfile.png";
 import catProfile from "../assets/images/gato.png";
+import { FaUserDoctor } from "react-icons/fa6";
 import { useRef, useState, type LegacyRef } from "react";
 import Image from "next/image";
 import lupaPet from "..//assets/images/lupaPet.png";
@@ -54,16 +55,16 @@ export function PetInfo({ petSelect, bottomDivRef }: PetInfoProps) {
       {/* Caso um pet esteja selecionado */}
       <div
         ref={bottomDivRef}
-        className={`${petSelect ? "bg-mascots-primary-600 p-6 rounded-lg shadow-lg" : "hidden"}`}
+        className={`${petSelect ? "bg-pets-color-300 p-6 rounded-lg shadow-lg" : "hidden"}`}
       >
         <div className="flex gap-6 items-start shadow-md rounded-lg px-4 py-5 bg-gray-100">
           <div
-            className={`${petSelect?.species === "Cachorro" ? "rounded-full mt-5 bg-mascots-primary-700 p-3" : "hidden"}`}
+            className={`${petSelect?.species === "Cachorro" ? "rounded-full mt-5 bg-pets-color-700 p-3" : "hidden"}`}
           >
             <Image alt="DogProfile" src={dogProfile} width={100} height={100} />
           </div>
           <div
-            className={`${petSelect?.species === "Gato" ? "rounded-full mt-5 bg-mascots-primary-700 p-3" : "hidden"}`}
+            className={`${petSelect?.species === "Gato" ? "rounded-full mt-5 bg-pets-color-700 p-3" : "hidden"}`}
           >
             <Image alt="catProfile" src={catProfile} width={100} height={100} />
           </div>
@@ -139,8 +140,8 @@ export function PetInfo({ petSelect, bottomDivRef }: PetInfoProps) {
           </div>
         </div>
         <div className="bg-gray-100 p-6 rounded-lg relative shadow-md mt-6 w-full">
-          <div className="flex  border-b-2 border-dashed border-mascots-primary-700 pb-2 mb-4 items-center gap-2">
-            <FaUser size={32} className="text-mascots-primary-800" />
+          <div className="flex  border-b-2 border-dashed border-pets-color-700 pb-2 mb-4 items-center gap-2">
+            <FaUser size={32} className="text-pets-color-600" />
             <h2 className="text-xl font-semibold text-gray-800">
               Informações do Tutor
             </h2>
@@ -199,14 +200,21 @@ export function PetInfo({ petSelect, bottomDivRef }: PetInfoProps) {
         <div className="w-full flex justify-around gap-10 mt-5">
           <Link
             href={"/consultas"}
-            className="px-5 py-3 flex items-center gap-1 bg-mascots-primary-800 hover:scale-105 max-w-fit text-gray-200 rounded-md font-semibold transition-all"
+            className="px-5 py-3 flex items-center gap-1 bg-mascots-primary-700 hover:bg-mascots-primary-800 hover:scale-105 max-w-fit text-white rounded-md font-semibold transition-all"
           >
-            <FaClipboardList size={24} />
+            <FaUserDoctor size={24} />
             Marcar Consulta
           </Link>
           <Link
+            href={"/exames"}
+            className="px-5 py-3 flex items-center gap-1 bg-exames-color-700 hover:bg-exames-color-800 hover:scale-105 max-w-fit text-white rounded-md font-semibold transition-all"
+          >
+            <FaClipboardList size={24} />
+            Prescrever Exame
+          </Link>
+          <Link
             href={"/internato"}
-            className="px-5 py-3 bg-internato-color-800 flex items-center gap-1 hover:scale-105 max-w-fit text-gray-200 rounded-md font-semibold transition-all"
+            className="px-5 py-3 bg-internato-color-700 hover:bg-internato-color-800 flex items-center gap-1 hover:scale-105 max-w-fit text-white rounded-md font-semibold transition-all"
           >
             <TbActivityHeartbeat size={24} />
             Internamento

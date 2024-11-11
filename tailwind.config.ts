@@ -27,7 +27,7 @@ const config: Config = {
         "main-content": "54rem",
       },
       width: {
-        "cards-pets": "calc(25% - 1.5rem)",
+        "cards-pets": "calc(33% - 1.5rem)",
         "custom-width": "58rem", // 1091px em rem
       },
       height: {
@@ -44,17 +44,17 @@ const config: Config = {
 
         //600 default
         "pets-color": {
-          "50": "#fff7ed",
-          "100": "#feedd6",
-          "200": "#fcd7ac",
-          "300": "#fabb77",
-          "400": "#f79340",
-          "500": "#f47216",
-          "600": "#e55a11",
-          "700": "#be4410",
-          "800": "#973615",
-          "900": "#7a2e14",
-          "950": "#421508",
+          "50": "#fdf5ef",
+          "100": "#fbe6d9",
+          "200": "#f5cbb3",
+          "300": "#efa882",
+          "400": "#e67244",
+          "500": "#e2592d",
+          "600": "#d34223",
+          "700": "#af311f",
+          "800": "#8c2920",
+          "900": "#71241d",
+          "950": "#3d0f0d",
         },
         //800 default
         "internato-color": {

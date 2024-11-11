@@ -38,12 +38,10 @@ export function SelectExamType({
         <option value="tipo">Tipo de Exame</option>
         <option value="Hemograma">🩸 Hemograma</option>
         <option value="Bioquímico">🧪 Bioquímico</option>
-        <option value="Avaliação de lâminas citopatológicas">
+        <option value="Ava. Citopatológicas">
           🧫 Avaliação de lâminas citopatológicas
         </option>
-        <option value="Parasitológico de pele">
-          🦠 Parasitológico de pele
-        </option>
+        <option value="Parasito. Pele">🦠 Parasitológico de pele</option>
         <option value="Urinalise">🧪 Urinalise</option>
       </select>
     </div>
