@@ -6,6 +6,7 @@ import { TbAlignBoxBottomCenterFilled } from "react-icons/tb";
 import { MainContent } from "../components/MainContent";
 import { useState } from "react";
 import { MdAddBox } from "react-icons/md";
+import Estatistica from "../assets/images/estatisticas.png"
 
 export function RecursosContent() {
   const [visualizarRecursos, setVisualizarRecursos] = useState(true);
@@ -60,7 +61,7 @@ export function RecursosContent() {
   ];
 
   return (
-    <main className="flex px-4 py-4 gap-2 h-dvh">
+    <main className="flex px-4 py-4 gap-2 min-h-screen">
       <Aside2Nav
         icon1={<TbAlignBoxBottomCenterFilled size={24} />}
         text1="Visualizar Recurso"
@@ -73,9 +74,27 @@ export function RecursosContent() {
         width="w-64"
       />
 
-      <div className="flex w-full flex-col relative">
-        <MainContent zIndex="z-40" visualize={visualizarRecursos}>
-          <h1 className="text-xl font-bold mb-4">Visualizar Recursos</h1>
+<div className="flex w-full h-fit flex-col relative ">
+  <MainContent zIndex="z-40" visualize={visualizarRecursos}>
+    <div className="flex flex-col gap-14">
+      <div className="flex flex-col gap-4">
+        <div className="flex items-center gap-2 border-b-2 pb-1 w-fit bg-recursos-color-600">
+          <img
+            src={Estatistica}
+            alt="RecursosIcon"
+            width={50}
+            height={50}
+          />
+          <h1 className="text-2xl font-jetbrains">Recursos</h1>
+        </div>
+        <p className="text-gray-700 font-jetbrains">
+          Clique nos cartões para mais informações
+        </p>
+      </div>
+    </div>
+
+
+            
           <table className="w-full border-collapse border border-gray-300 text-sm">
             <thead className="bg-gray-100">
               <tr>
