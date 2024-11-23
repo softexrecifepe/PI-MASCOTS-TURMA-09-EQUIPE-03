@@ -27,7 +27,7 @@ export function HeaderPage({
   recursos,
 }: HeaderPageProps) {
   return (
-    <header className="bg-white font-roboto text-gray-800 h-20 p-6 flex justify-between items-center shadow-md">
+    <header className=" font-roboto bg-white text-gray-800 h-20 p-6 flex justify-between items-center ">
       <div className="flex items-center space-x-2">
         <Image src={logo} alt="Ícone" width={50} height={50} />
       </div>
