@@ -107,10 +107,6 @@ export function HeaderPage({
       </nav>
 
       <div className="ml-4 flex items-center space-x-6">
-        <FaBell
-          size={24}
-          className="text-gray-600 hover:text-black transition-colors duration-200"
-        />
         <FaRegUserCircle
           size={32}
           className="text-gray-800 hover:text-black transition-colors duration-200"
