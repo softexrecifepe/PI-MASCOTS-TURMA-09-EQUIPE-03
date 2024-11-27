@@ -64,20 +64,6 @@ export function HeaderPage({
 
           <li className="group flex items-center">
             <Link
-              href="/internato"
-              className={`${
-                internato
-                  ? "bg-internato-color-600 text-white"
-                  : "bg-transparent text-gray-800"
-              } flex items-center space-x-2 py-2 px-4 rounded-full transition-all duration-200 group-hover:bg-internato-color-800 group-hover:shadow-lg group-hover:shadow-internato-color-800 group-hover:text-white`}
-            >
-              <FiActivity size={24} />
-              <span>Internato</span>
-            </Link>
-          </li>
-
-          <li className="group flex items-center">
-            <Link
               href="/recursos"
               className={`${
                 recursos
