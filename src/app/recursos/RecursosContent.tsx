@@ -50,13 +50,19 @@ export function RecursosContent() {
     setEditIndex(index);
   };
 
-  const handleSaveClick = (index: number) => {
-    setEditIndex(null); // Sai do modo de edição
+  const handleSaveClick = () => {
+    setEditIndex(null); // Finaliza a edição
   };
 
   const handleQuantidadeChange = (index: number, value: string) => {
     const novosRecursos = [...recursos];
     novosRecursos[index].quantidade = value;
+    setRecursos(novosRecursos);
+  };
+
+  const handleStatusChange = (index: number, value: string) => {
+    const novosRecursos = [...recursos];
+    novosRecursos[index].status = value;
     setRecursos(novosRecursos);
   };
 
@@ -100,13 +106,24 @@ export function RecursosContent() {
                   <td className="border border-gray-300 px-4 py-2">{recurso.nome}</td>
                   <td className="border border-gray-300 px-4 py-2">{recurso.tipo}</td>
                   <td className="border border-gray-300 px-4 py-2">
-                    <span
-                      className={`px-2 py-1 rounded ${
-                        recurso.status === "Disponível" ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"
-                      }`}
-                    >
-                      {recurso.status}
-                    </span>
+                    {editIndex === index ? (
+                      <select
+                        value={recurso.status}
+                        onChange={(e) => handleStatusChange(index, e.target.value)}
+                        className="p-1 border rounded"
+                      >
+                        <option value="Disponível">Disponível</option>
+                        <option value="Indisponível">Indisponível</option>
+                      </select>
+                    ) : (
+                      <span
+                        className={`px-2 py-1 rounded ${
+                          recurso.status === "Disponível" ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"
+                        }`}
+                      >
+                        {recurso.status}
+                      </span>
+                    )}
                   </td>
                   <td className="border border-gray-300 px-4 py-2">
                     {editIndex === index ? (
@@ -122,7 +139,7 @@ export function RecursosContent() {
                   </td>
                   <td className="border border-gray-300 px-4 py-2">
                     {editIndex === index ? (
-                      <button onClick={() => handleSaveClick(index)} className="text-green-500">
+                      <button onClick={handleSaveClick} className="text-green-500">
                         <MdSave size={24} />
                       </button>
                     ) : (
@@ -137,17 +154,44 @@ export function RecursosContent() {
           </table>
         </MainContent>
 
+        {/* MainContent de Registrar Recursos */}
         <MainContent zIndex="z-10" visualize={registarRecursos}>
           <h1 className="text-xl font-bold">Registrar Recurso</h1>
           <form className="flex flex-col gap-4 mt-4" onSubmit={handleSubmit}>
-            <input type="text" name="nome" placeholder="Nome do Recurso" value={novoRecurso.nome} onChange={handleChange} className="border p-2 rounded" required />
-            <input type="text" name="tipo" placeholder="Tipo do Recurso" value={novoRecurso.tipo} onChange={handleChange} className="border p-2 rounded" required />
-            <input type="text" name="quantidade" placeholder="Quantidade" value={novoRecurso.quantidade} onChange={handleChange} className="border p-2 rounded" required />
+            <input
+              type="text"
+              name="nome"
+              placeholder="Nome do Recurso"
+              value={novoRecurso.nome}
+              onChange={handleChange}
+              className="border p-2 rounded"
+              required
+            />
+            <input
+              type="text"
+              name="tipo"
+              placeholder="Tipo do Recurso"
+              value={novoRecurso.tipo}
+              onChange={handleChange}
+              className="border p-2 rounded"
+              required
+            />
+            <input
+              type="text"
+              name="quantidade"
+              placeholder="Quantidade"
+              value={novoRecurso.quantidade}
+              onChange={handleChange}
+              className="border p-2 rounded"
+              required
+            />
             <select name="status" value={novoRecurso.status} onChange={handleChange} className="border p-2 rounded">
               <option value="Disponível">Disponível</option>
               <option value="Indisponível">Indisponível</option>
             </select>
-            <button type="submit" className="bg-green-500 text-white p-2 rounded hover:bg-green-600 transition-all duration-200">Adicionar Recurso</button>
+            <button type="submit" className="bg-green-500 text-white p-2 rounded hover:bg-green-600 transition-all duration-200">
+              Adicionar Recurso
+            </button>
           </form>
         </MainContent>
       </div>
