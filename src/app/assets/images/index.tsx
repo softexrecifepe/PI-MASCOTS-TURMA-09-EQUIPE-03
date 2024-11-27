@@ -5,6 +5,7 @@ import Veterinary from "./Veterinary.png";
 import Usuario from "./usuario.png";
 import Icone from "./icon.png";
 import pata from "./pata.png";
+import Estatistica from "./estatisticas.png";
 
 export const Images = {
   Clipboard,
@@ -14,4 +15,6 @@ export const Images = {
   Usuario,
   Icone,
   pata,
+  Estatistica,
+
 };
